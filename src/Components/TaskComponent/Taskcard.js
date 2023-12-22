@@ -5,18 +5,21 @@ import React from "react";
 
 const characters = [
   {
+    id:1,
     heading: "Task List",
     button: "ADD",
     icon: <AddCircleIcon /> ,
     span: "No Tasks Added",
   },
   {
+    id:2,
     heading: "Today's Reports",
     button: " ",
     icon: <RemoveCircleIcon />,
     span: " ",
   },
   {
+    id:3,
     heading: "Total Holidays",
     button: "ADD/EDIT",
     icon: <AddCircleIcon />,
@@ -30,20 +33,19 @@ const CardListItem = (props) => {
     <Card style={{ margin: "20px", height: "110px"}}>
       <div
         style={{
-          width: "90%",
-          margin: "0 10px 0 10px",
+          width: "93%",
+          margin: "0 5px 0 10px",
           flexShrink: 0,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <h4>{props.character.heading}</h4>
-        <IconButton size="small" style={{color:'#1757C2'}}>
+        <h5>{props.character.heading}</h5>
+        <IconButton size="small" style={{color:'#1757C2', fontSize:'12px'}}>
           {props.character.icon}
           {props.character.button}
         </IconButton>
-
       </div>
       <span style={{ color: "lightgrey", marginLeft: "20px" }}>
         {props.character.span}
@@ -54,7 +56,7 @@ const CardListItem = (props) => {
 
 const CardList = () => {
   return (
-    <ul style={{ listStyleType: "none" }}>
+    <ul style={{ listStyleType: "none",width:'100%' }}>
       {characters.map((character) => {
         return <CardListItem character={character} key={character.id} />;
       })}

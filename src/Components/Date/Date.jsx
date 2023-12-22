@@ -1,74 +1,46 @@
-import React from "react";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import * as React from "react";
+import dayjs from "dayjs";
+import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
+import { DesktopDateTimePicker } from "@mui/x-date-pickers/DesktopDateTimePicker";
+import { Grid, Toolbar, Typography } from "@mui/material";
 
-const Date = () => {
+export default function ResponsiveDateTimePickers() {
   return (
-    <>
-      <div
-        style={{ backgroundColor: "#1757C2", height: "70px", width: "100%" }}
-      >
-        <div
-          style={{
-            marginLeft: "20%",
-          }}
-        >
-          <LocalizationProvider
-            dateAdapter={AdapterDayjs}
-            style={{ height: "10px" }}
-          >
+    <Grid style={{ backgroundColor: "#1757C2" }}>
+      <div style={{ height: "10%", width: "100%" }}>
+        <div style={{ marginLeft: "30%", marginRight: "40%" }}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer
-              components={["DatePicker"]}
-              style={{ height: "10px" }}
+              components={[
+                "DateTimePicker",
+                "MobileDateTimePicker",
+                "DesktopDateTimePicker",
+                "StaticDateTimePicker",
+              ]}
             >
-              <DatePicker
-                defaultValue={dayjs("1999-01-10")}
-                style={{ height: '10px', '& input': { height: '10px' } }}
-              />
+              <DemoItem>
+                <DesktopDateTimePicker
+                  defaultValue={dayjs("2022-04-17T15:30")}
+                  renderInput={(props) => (
+                    <Toolbar>
+                      <Typography variant="h6" color="inherit">
+                        {props.title}
+                      </Typography>
+                      {/* You can customize the navigation buttons here */}
+                      <div style={{ marginLeft: "auto" }}>
+                        <button onClick={props.onPrev}>&lt;</button>
+                        <button onClick={props.onNext}>&gt;</button>
+                      </div>
+                    </Toolbar>
+                  )}
+                />
+              </DemoItem>
             </DemoContainer>
           </LocalizationProvider>
         </div>
       </div>
-    </>
+    </Grid>
   );
-};
-
-export default Date;
-
-
-// import React from 'react';
-// import { LocalizationProvider, DatePicker as MuiDatePicker, makeStyles } from '@mui/lab';
-// import AdapterDayjs from '@mui/lab/AdapterDayjs';
-// import dayjs from 'dayjs';
-
-// const useStyles = makeStyles({
-//   datePicker: {
-//     height: '10px',
-//     '& .MuiInputBase-input': {
-//       height: '10px',
-//     },
-//   },
-// });
-
-// const YourComponent = () => {
-//   const classes = useStyles();
-
-//   return (
-//     <div style={{ backgroundColor: "#1757C2", height: "70px", width: "100%" }}>
-//       <div style={{ marginLeft: "20%" }}>
-//         <LocalizationProvider dateAdapter={AdapterDayjs}>
-//           <MuiDatePicker
-//             defaultValue={dayjs("1999-01-10")}
-//             classes={{ root: classes.datePicker }}
-//           />
-//         </LocalizationProvider>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default YourComponent;
-
+}

@@ -1,10 +1,12 @@
-import React from 'react'
-import SearchAppBar from '../Nav/SearchAppBar'
+import React from 'react';
+import Date from "../Date/Date";
+import Card from "../Cardcomponent/Card";
 
 const Home = () => {
   return (
     <>
-        <SearchAppBar/>
+        <Date />
+        <Card />
     </>
   )
 }

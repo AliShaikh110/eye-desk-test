@@ -11,6 +11,8 @@ import {
   TableRow,
   Paper,
   Card,
+  Grid,
+  // Checkbox,
 } from "@mui/material";
 
 const CardComponent = ({ title, tableData, headers }) => {
@@ -39,7 +41,7 @@ const CardComponent = ({ title, tableData, headers }) => {
         </div>
         <TableContainer component={Paper}>
           <Table>
-            <TableHead style={{ backgroundColor: "#1757C2" }}>
+            <TableHead style={{ backgroundColor: "#1757C2"}}>
               <TableRow>
                 {headers.map((header, index) => (
                   <TableCell key={index}>{header}</TableCell>
@@ -48,7 +50,7 @@ const CardComponent = ({ title, tableData, headers }) => {
             </TableHead>
             <TableBody>
               {tableData.map((row) => (
-                <TableRow key={row.id} style={{ backgroundColor: "#F5F5F5;" }}>
+                <TableRow key={row.patientId}>
                   {Object.keys(row).map((key, index) => (
                     <TableCell key={index}>{row[key]}</TableCell>
                   ))}
@@ -68,96 +70,104 @@ const cardsData = [
 
     tableData: [
       {
-        id: 1,
+        id:1,
         patientId: "8326826",
         patientName: "Patient_1",
         scheduleTime: "10:00 AM",
+      //   check:<Checkbox
+      //   color="primary"
+      //   disabled
+      //   label=""
+      //   size="sm"
+      //   variant="solid"
+      // />
       },
       {
-        id: 2,
+        id:2,
         patientId: "937493",
         patientName: "Patient_2",
         scheduleTime: "11:30 AM",
       },
       {
-        id: 2,
-        patientId: "937493",
+        id:3,
+        patientId: "97397293",
         patientName: "Patient_2",
         scheduleTime: "11:30 AM",
       },
     ],
-    headers: ["#", "Patient ID", "Patient Name", "Schedule Time"],
+    headers: ["#", "Patient ID", "Patient Name", "Schedule Time", " "],
   },
   {
     title: "OT List Today",
     tableData: [
       {
-        patientId: " ",
+        id:1,
+        patientId:'212289',
         patientName: "No - OTs",
-        scheduleTime: " ",
       },
     ],
-    headers: ["#", "Patient Name", "OT Time"],
+    headers: ["#", "Patient Name", "OT Time"," "],
   },
   {
     title: "Another List Today",
     tableData: [
       {
-        id: 1,
+        id:1,
         patientId: "47942792",
         patientName: "Patient_1",
         scheduleTime: "12:00 PM",
       },
     ],
-    headers: ["#", "Patient ID", "Patient Name", "Schedule Time"],
+    headers: ["#", "Patient ID", "Patient Name", "Schedule Time", " "],
   },
   {
     title: "Admitted Patient List",
     tableData: [
       {
-        id: 1,
+        id:1,
         patientId: "84794922",
         patientName: "Patient_1",
         scheduleTime: "10:00 AM",
       },
     ],
-    headers: ["#", "Patient ID", "Patient Name", "Schedule Time"],
+    headers: ["#", "Patient ID", "Patient Name", "Schedule Time"," "],
   },
   {
     title: "Discharge List Today",
     tableData: [
       {
-        id: "",
+        id:1,
+        patientId:"587686",
         PatientName: "Patient_1",
         DischargeTime: "10:00 AM",
       },
     ],
-    headers: ["#", "Patient Name", "Discharge Time"],
+    headers: ["#", "Patient Name", "Discharge Time", " "],
   },
 ];
 
 const PatientCard = () => {
   return (
-    <div style={{ display: "flex" }}>
-      <div
-        style={{
-          display: "grid",
-          width: "65%",
-          gridTemplateColumns: "repeat(auto-fill, minmax(323px, 1fr))",
-          gap: "20px",
-          backgroundColor: "#F5F5F5",
-          padding: "20px",
-          borderRight:'2px solid gray'
-        }}
+    <Grid style={{ display: "flex", backgroundColor: "#F5F5F5" }}>
+      <Grid
+        container
+        p={5}
+        spacing={2}
+        item
+        sm={12}
+        xs={12}
+        md={8}
       >
         {cardsData.map((card, index) => (
-          <CardComponent key={index} {...card} />
+          <Grid item key={index} xs={12} md={6}>
+            <CardComponent {...card} />
+          </Grid>
         ))}
-      </div>
-      <div style={{ width: "35%", backgroundColor:'#F5F5F5' }}>
+      </Grid>
+      <Grid item xs={12} md={4} sm={12} style={{margin:'30px'}}>
         <Task />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 
