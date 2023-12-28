@@ -1,6 +1,7 @@
 import Task from "../TaskComponent/Task";
-import React from "react";
+import React, { useState } from "react";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import cardsData from './CardContent';
 import {
   CardContent,
   Table,
@@ -12,10 +13,13 @@ import {
   Paper,
   Card,
   Grid,
-  // Checkbox,
 } from "@mui/material";
 
 const CardComponent = ({ title, tableData, headers }) => {
+  const [showAllRows, setShowAllRows] = useState(false);
+
+  const visibleRows = showAllRows ? tableData.length : Math.min(tableData.length, 2);
+
   return (
     <Card
       style={{
@@ -25,7 +29,6 @@ const CardComponent = ({ title, tableData, headers }) => {
         background: "#FFF",
         boxShadow:
           "0px 0px 0px 0px rgba(0, 0, 0, 0.05), 0px 1px 2px 0px rgba(0, 0, 0, 0.05), 0px 3px 3px 0px rgba(0, 0, 0, 0.04), 0px 7px 4px 0px rgba(0, 0, 0, 0.03), 0px 12px 5px 0px rgba(0, 0, 0, 0.01), 0px 19px 5px 0px rgba(0, 0, 0, 0.00)",
-        marginBottom: "20px",
       }}
     >
       <CardContent>
@@ -37,22 +40,32 @@ const CardComponent = ({ title, tableData, headers }) => {
           }}
         >
           <h5>{title}</h5>
-          <RemoveCircleIcon style={{ color: "#1757C2" }} />
+          <RemoveCircleIcon
+            style={{ color: "#1757C2", cursor: "pointer" }}
+            onClick={() => setShowAllRows(!showAllRows)}
+          />
         </div>
         <TableContainer component={Paper}>
           <Table>
-            <TableHead style={{ backgroundColor: "#1757C2"}}>
+            <TableHead style={{ backgroundColor: "#1757C2" }}>
               <TableRow>
                 {headers.map((header, index) => (
-                  <TableCell key={index}>{header}</TableCell>
+                  <TableCell
+                    key={index}
+                    style={{ padding: "5px 10px 5px 10px", color: "white" }}
+                  >
+                    {header}
+                  </TableCell>
                 ))}
               </TableRow>
             </TableHead>
             <TableBody>
-              {tableData.map((row) => (
+              {tableData.slice(0, visibleRows).map((row) => (
                 <TableRow key={row.patientId}>
                   {Object.keys(row).map((key, index) => (
-                    <TableCell key={index}>{row[key]}</TableCell>
+                    <TableCell key={index} style={{ padding: "10px" }}>
+                      {row[key]}
+                    </TableCell>
                   ))}
                 </TableRow>
               ))}
@@ -64,107 +77,17 @@ const CardComponent = ({ title, tableData, headers }) => {
   );
 };
 
-const cardsData = [
-  {
-    title: "Appointment List Today",
-
-    tableData: [
-      {
-        id:1,
-        patientId: "8326826",
-        patientName: "Patient_1",
-        scheduleTime: "10:00 AM",
-      //   check:<Checkbox
-      //   color="primary"
-      //   disabled
-      //   label=""
-      //   size="sm"
-      //   variant="solid"
-      // />
-      },
-      {
-        id:2,
-        patientId: "937493",
-        patientName: "Patient_2",
-        scheduleTime: "11:30 AM",
-      },
-      {
-        id:3,
-        patientId: "97397293",
-        patientName: "Patient_2",
-        scheduleTime: "11:30 AM",
-      },
-    ],
-    headers: ["#", "Patient ID", "Patient Name", "Schedule Time", " "],
-  },
-  {
-    title: "OT List Today",
-    tableData: [
-      {
-        id:1,
-        patientId:'212289',
-        patientName: "No - OTs",
-      },
-    ],
-    headers: ["#", "Patient Name", "OT Time"," "],
-  },
-  {
-    title: "Another List Today",
-    tableData: [
-      {
-        id:1,
-        patientId: "47942792",
-        patientName: "Patient_1",
-        scheduleTime: "12:00 PM",
-      },
-    ],
-    headers: ["#", "Patient ID", "Patient Name", "Schedule Time", " "],
-  },
-  {
-    title: "Admitted Patient List",
-    tableData: [
-      {
-        id:1,
-        patientId: "84794922",
-        patientName: "Patient_1",
-        scheduleTime: "10:00 AM",
-      },
-    ],
-    headers: ["#", "Patient ID", "Patient Name", "Schedule Time"," "],
-  },
-  {
-    title: "Discharge List Today",
-    tableData: [
-      {
-        id:1,
-        patientId:"587686",
-        PatientName: "Patient_1",
-        DischargeTime: "10:00 AM",
-      },
-    ],
-    headers: ["#", "Patient Name", "Discharge Time", " "],
-  },
-];
-
 const PatientCard = () => {
   return (
     <Grid style={{ display: "flex", backgroundColor: "#F5F5F5" }}>
-      <Grid
-        container
-        p={5}
-        spacing={2}
-        item
-        sm={12}
-        xs={12}
-        md={8}
-      >
+      <Grid container p={5} spacing={2} item sm={12} xs={12} md={8.5}>
         {cardsData.map((card, index) => (
           <Grid item key={index} xs={12} md={6}>
             <CardComponent {...card} />
           </Grid>
         ))}
       </Grid>
-      <Grid item xs={12} md={4} sm={12} style={{margin:'30px'}}>
+      <Grid item xs={12} md={3.5} sm={12} style={{ margin: "30px" }}>
         <Task />
       </Grid>
     </Grid>
@@ -172,3 +95,4 @@ const PatientCard = () => {
 };
 
 export default PatientCard;
+

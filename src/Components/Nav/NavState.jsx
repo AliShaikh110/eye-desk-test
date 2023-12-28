@@ -4,7 +4,6 @@ import IconButton from "@mui/material/IconButton";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 
-
 const NavState = () => {
     return (
         <Box
@@ -28,3 +27,4 @@ const NavState = () => {
       );
     }
 export default NavState
+
