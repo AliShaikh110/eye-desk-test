@@ -1,12 +1,11 @@
 import React from 'react'
-import { Container } from '@mui/material'
+import Navbar from '../../Nav/Navbar'
 
 const Store = () => {
   return (
     <>
-        <Container>
+          <Navbar/>
             S T O R E
-        </Container>
     </>
   )
 }

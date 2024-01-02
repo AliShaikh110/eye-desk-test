@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Card, Container, Grid } from "@mui/material";
 import AppointmentDetail from "../../AppointmentDetails/AppointmentDetail";
 import Navbar2 from "../../Date/NavbarTwo/Navbar2";
+import Navbar from "../../Nav/Navbar";
 
 const Item = styled(Paper)(({ theme, borderBottomColor }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -56,6 +57,7 @@ const itemStyle={
 const OPD = () => {
   return (
     <>
+    <Navbar/>
     <Navbar2 />
       <Card maxWidth="xl" style={{ display: "flex", width:'100%' }}>
         <Card style={{ width: "50%"}}>

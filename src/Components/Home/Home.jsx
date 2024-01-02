@@ -1,16 +1,16 @@
-import React from 'react';
-// import Date from "../Date/Date";
+import React from "react";
 import Card from "../Cardcomponent/Card";
-import Navbar2 from '../Date/NavbarTwo/Navbar2';
+import Navbar2 from "../Date/NavbarTwo/Navbar2";
+import Navbar from "../Nav/Navbar";
 
 const Home = () => {
   return (
     <>
-    <Navbar2/>
-        {/* <Date /> */}
-        <Card />
+    <Navbar/>
+      <Navbar2 />
+      <Card />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

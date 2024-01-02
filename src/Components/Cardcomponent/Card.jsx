@@ -1,7 +1,7 @@
 import Task from "../TaskComponent/Task";
 import React, { useState } from "react";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
-import cardsData from './CardContent';
+import cardsData from './Content';
 import {
   CardContent,
   Table,
