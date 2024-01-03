@@ -80,14 +80,14 @@ const CardComponent = ({ title, tableData, headers }) => {
 const PatientCard = () => {
   return (
     <Grid style={{ display: "flex", backgroundColor: "#F5F5F5" }}>
-      <Grid container p={5} spacing={2} item sm={12} xs={12} md={8.5}>
+      <Grid container p={5} spacing={2} item sm={12} xs={12} md={9}>
         {cardsData.map((card, index) => (
           <Grid item key={index} xs={12} md={6}>
             <CardComponent {...card} />
           </Grid>
         ))}
       </Grid>
-      <Grid item xs={12} md={3.5} sm={12} style={{ margin: "30px" }}>
+      <Grid item xs={12} md={3} sm={12} style={{ margin: "30px" }}>
         <Task />
       </Grid>
     </Grid>

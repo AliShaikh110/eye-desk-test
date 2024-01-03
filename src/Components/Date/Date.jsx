@@ -1,16 +1,15 @@
 import React from "react";
 
 const DateStyle={
-  width: "40%",
+  width: "30%",
   height: "30px",
-  margin: "5px 0 0 150px",
-  borderRadius: "5px",
+  margin: "5px 0 0 120px",
   color: "white",
   backgroundColor: "#1757C2",
-  border: "1.5px solid white",
+  border: "none",
   padding:'5px',
   outline: "none",
-  fontSize: "20px",
+  fontSize: "18px",
   fontFamily: "sans-serif",
 }
 

@@ -9,16 +9,14 @@ const Navbar2 = () => {
   return (
     <>
       <div
-        style={{ width: "100%", backgroundColor: "#1757C2", height: "50px" }}
+        style={{ width: "100%", backgroundColor: "#1757C2", display: "flex" }}
       >
-        <Grid style={{ display: "flex" }}>
-          <Grid md={6} sm={6} style={{ width: "50%" }}>
-            <Date />
-          </Grid>
-          <Grid md={6} sm={6} style={{ width: "50%" }}>
-            <NavRight />
-          </Grid>
-        </Grid>
+        <div style={{ width: "45%" }}>
+          <Date />
+        </div>
+        <div style={{ width: "50%" }}>
+          <NavRight />
+        </div>
       </div>
     </>
   );
@@ -38,7 +36,7 @@ const NavRight = function () {
           color: "white",
         }}
       >
-        <h3>Appointment Letter</h3>
+        <h3 style={{ fontSize: "15px", marginRight:'20px'}}>Appointment Letter</h3>
         <div style={{ display: "flex" }}>
           <div>
             <Button
@@ -46,6 +44,7 @@ const NavRight = function () {
                 color: "white",
                 fontWeight: "bold",
                 backgroundColor: "#134CAB",
+                fontSize: "15px"
               }}
             >
               Add
@@ -59,6 +58,7 @@ const NavRight = function () {
                 color: "white",
                 fontWeight: "bold",
                 backgroundColor: "#134CAB",
+                fontSize: "15px"
               }}
             >
               Print
@@ -72,6 +72,7 @@ const NavRight = function () {
                 color: "white",
                 fontWeight: "bold",
                 backgroundColor: "#134CAB",
+                fontSize: "15px"
               }}
             >
               Reports
