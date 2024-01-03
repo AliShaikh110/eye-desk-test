@@ -24,9 +24,9 @@ const cardsData = [
         },
         {
           id: 4,
-          patientId: "97397293",
-          patientName: "Patient_3",
-          scheduleTime: "1:30 AM",
+          patientId: "23397293",
+          patientName: "Patient_4",
+          scheduleTime: "5:30 AM",
         },
       ],
       headers: ["#", "Patient ID", "Patient Name", "Schedule Time", " "],

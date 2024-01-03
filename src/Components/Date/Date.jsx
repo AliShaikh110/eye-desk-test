@@ -1,7 +1,7 @@
 import React from "react";
 
 const DateStyle={
-  width: "30%",
+  width: "35%",
   height: "30px",
   margin: "5px 0 0 120px",
   color: "white",
@@ -25,3 +25,4 @@ const Date = () => {
 };
 
 export default Date;
+

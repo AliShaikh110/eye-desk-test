@@ -1,89 +1,93 @@
-import React from "react";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
-import { Card, Container, Grid } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Tab, Tabs, Typography } from "@mui/material";
 import AppointmentDetail from "../../AppointmentDetails/AppointmentDetail";
 import Navbar2 from "../../Date/NavbarTwo/Navbar2";
 import Navbar from "../../Nav/Navbar";
 
-const Item = styled(Paper)(({ theme, borderBottomColor }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-  borderBottom: `5px solid ${borderBottomColor || "transparent"}`,
-}));
-
 const OPDdata = [
   {
     id: 1,
-    h2: 2,
-    p: "MY QUEUE",
-    borderBottomColor: "YELLOW",
+    h2: 8,
+    p: "ALL",
+    borderBottomColor: "none",
   },
   {
     id: 2,
-    h2: 1,
-    p: "NOT ARRIVED",
+    h2: 2,
+    p: "SCHEDULED",
     borderBottomColor: "green",
   },
   {
     id: 3,
     h2: 2,
-    p: "APPOINTMENTS",
+    p: "WAITING",
     borderBottomColor: "blue",
   },
   {
     id: 4,
-    h2: 2,
-    p: "REFERRALS",
+    h2: 3,
+    p: "COMPLETED",
     borderBottomColor: "orange",
   },
   {
     id: 5,
     h2: 1,
-    p: "PROVISIONAL",
-    borderBottomColor: "orange",
+    p: "ENGAGED",
+    borderBottomColor: "purple",
   },
 ];
 
-const itemStyle={
-  backgroundColor:'#D9D9D9',
-  color:'black'
-}
-
+const itemStyle = {
+  backgroundColor: "#D9D9D9",
+  color: "black",
+};
 
 const OPD = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <>
-    <Navbar/>
-    <Navbar2 />
-      <Card maxWidth="xl" style={{ display: "flex", width:'100%' }}>
-        <Card style={{ width: "50%"}}>
-          <Grid container spacing={0}>
-            <Grid item md={2} sm={12}>
-              <Item style={{ color: "black",height:'85px'}}>
-                <h3>8</h3>
-                <span style={{fontSize:'10px' }}>ALL</span>
-              </Item>
-            </Grid>
+      <Navbar />
+      <Navbar2 />
+      <Grid container>
+        <Grid item xs={12} sm={5} style={{borderRight:'1px solid gray'}}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            scrollButtons="auto"
+            variant="scrollable"
+          >
             {OPDdata.map((ele) => (
-              <Grid item md={2} sm={12} key={ele.id}>
-                <Item style={itemStyle} borderBottomColor={ele.borderBottomColor}>
-                  <h2>{ele.h2}</h2>
-                  <p style={{fontSize:'8px',textWrap:'wrap'}}>{ele.p}</p>
-                </Item>
-              </Grid>
+              <Tab
+                key={ele.id}
+                label={
+                  <Typography variant="subtitle2">
+                    <span style={{ fontWeight: "bold" }}>{ele.h2}</span>
+                    <br />
+                    <span style={{ fontSize: "10px " }}>{ele.p}</span>
+                  </Typography>
+                }
+                style={{
+                  ...itemStyle,
+                  borderBottom: `5px solid ${ele.borderBottomColor}`,
+                }}
+              />
             ))}
-          </Grid>
-        </Card>
-        <Container style={{ width: "50%"}}>
-          <AppointmentDetail />
-        </Container>
-      </Card>
-    </>
-  )
-}
+          </Tabs>
+        </Grid>
 
-export default OPD
+        <Grid item xs={12} sm={7}>
+          <AppointmentDetail />
+        </Grid>
+      </Grid>
+    </>
+  );
+};
+
+export default OPD;

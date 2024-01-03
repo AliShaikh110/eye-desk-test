@@ -4,6 +4,7 @@ import APTPatientDetail from "./AppointmentPatientDetail/APTPatientDetail";
 import APTProfileUpload from "./AppointmentProfileUploader/APTProfileUpload";
 import TemplateDetailsPatient from "./TemplateDetails/TemplateDetailsPatient";
 import CaseDetails from "./CasePatientDetails/CaseDetails";
+import TabsDetails from "./DetailTabsAppointment/TabsDetails";
 
 const AppointmentDetail = () => {
   return (
@@ -30,6 +31,7 @@ const AppointmentDetail = () => {
       <CaseDetails />
       <hr />
       <TemplateDetailsPatient />
+      <TabsDetails/>
     </Container>
   );
 };

@@ -1,9 +1,9 @@
-import { Button, Grid } from "@mui/material";
+import { Button } from "@mui/material";
 import Date from "../Date";
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
 import SummarizeOutlinedIcon from "@mui/icons-material/SummarizeOutlined";
 import React from "react";
+import AddModalBtn from "../../AddAppointmentModal/AddAppointmentModalButton/AddModalBtn";
 
 const Navbar2 = () => {
   return (
@@ -36,20 +36,12 @@ const NavRight = function () {
           color: "white",
         }}
       >
-        <h3 style={{ fontSize: "15px", marginRight:'20px'}}>Appointment Letter</h3>
+        <h3 style={{ fontSize: "15px", marginRight: "20px" }}>
+          Appointment Letter
+        </h3>
         <div style={{ display: "flex" }}>
           <div>
-            <Button
-              style={{
-                color: "white",
-                fontWeight: "bold",
-                backgroundColor: "#134CAB",
-                fontSize: "15px"
-              }}
-            >
-              Add
-              <AddCircleOutlineOutlinedIcon style={{ fontSize: "15px" }} />
-            </Button>
+            <AddModalBtn />
           </div>
           <div>
             <Button
@@ -58,7 +50,7 @@ const NavRight = function () {
                 color: "white",
                 fontWeight: "bold",
                 backgroundColor: "#134CAB",
-                fontSize: "15px"
+                fontSize: "12px",
               }}
             >
               Print
@@ -72,7 +64,7 @@ const NavRight = function () {
                 color: "white",
                 fontWeight: "bold",
                 backgroundColor: "#134CAB",
-                fontSize: "15px"
+                fontSize: "12px",
               }}
             >
               Reports

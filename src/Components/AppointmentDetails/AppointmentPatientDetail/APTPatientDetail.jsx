@@ -8,16 +8,16 @@ const APTPatientDetail = () => {
         Mr.John Smith <span>(Male | 26 yrs)</span>
       </Typography>
       <Typography variant="body1" paragraph>
-        Patient ID: [AEH - XYZ - 123456]
+        Patient ID : [AEH - XYZ - 123456]
       </Typography>
       <Typography variant="body2" paragraph>
-        Registration Date: 12-23-2021
+        Registration Date : 12-23-2021
       </Typography>
       <Typography variant="body3" paragraph>
-        Primary Contact: 39749374973
+        Primary Contact : 39749374973
       </Typography>
       <Typography variant="body4" paragraph>
-        Patient Referral: none{" "}
+        Patient Referral : none{" "}
         <span>
           <Button style={{ fontWeight: "800", fontSize: "10px" }}>
             Add referral
@@ -25,7 +25,7 @@ const APTPatientDetail = () => {
         </span>
       </Typography>
       <Typography variant="body6" paragraph>
-        Last Visit: 14 Aug (Doc. John Smith)
+        Last Visit : 14 Aug (Doc. John Smith)
       </Typography>
       <Typography variant="body7" paragraph>
         <div style={{ display: "flex", alignItems: "center" }}>

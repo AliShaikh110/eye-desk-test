@@ -88,7 +88,7 @@ const Navbar = () => {
                 display: {
                   xs: "flex",
                   md: "none",
-                  border: "1px solid black",
+                  // border: "1px solid black",
                 },
               }}
             >
@@ -122,7 +122,7 @@ const Navbar = () => {
               >
                 {icons.map(({ icon, label, path }) => (
                   <Link to={`/${path}`} key={label}>
-                    <IconButton size="small">
+                    <IconButton size="small" style={{marginLeft:'20px'}}>
                       {icon} {label}
                     </IconButton>
                   </Link>
