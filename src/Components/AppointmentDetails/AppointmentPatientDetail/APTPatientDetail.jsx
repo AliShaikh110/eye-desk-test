@@ -1,11 +1,11 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
 
-const APTPatientDetail = () => {
+const APTPatientDetail = ({ patientName }) => {
   return (
     <>
       <Typography variant="h6" gutterBottom>
-        Mr.John Smith <span>(Male | 26 yrs)</span>
+        {patientName ? (<span>{patientName} (Male | 26 yrs)</span>) : ("Enter Name")}
       </Typography>
       <Typography variant="body1" paragraph>
         Patient ID : [AEH - XYZ - 123456]

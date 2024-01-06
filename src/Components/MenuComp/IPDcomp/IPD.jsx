@@ -57,7 +57,7 @@ const IPD = () => {
         style={{
           display: "flex",
           flexDirection: "column", 
-          borderRight:'1px solid gray'
+          // borderRight:'1px solid gray'
         }}
       >
         <Tabs

@@ -9,7 +9,7 @@ const Navbar2 = () => {
   return (
     <>
       <div
-        style={{ width: "100%", backgroundColor: "#1757C2", display: "flex" }}
+        style={{ width: "100%", backgroundColor: "#1757C2", display: "flex"}}
       >
         <div style={{ width: "45%" }}>
           <Date />
@@ -76,3 +76,4 @@ const NavRight = function () {
     </>
   );
 };
+

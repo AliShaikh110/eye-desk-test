@@ -54,7 +54,12 @@ const OPD = () => {
       <Navbar />
       <Navbar2 />
       <Grid container>
-        <Grid item xs={12} sm={5} style={{borderRight:'1px solid gray'}}>
+        <Grid
+          item
+          xs={12}
+          sm={5}
+          style={{ borderRight: "1px solid gray"}}
+        >
           <Tabs
             value={value}
             onChange={handleChange}
@@ -81,7 +86,6 @@ const OPD = () => {
             ))}
           </Tabs>
         </Grid>
-
         <Grid item xs={12} sm={7}>
           <AppointmentDetail />
         </Grid>

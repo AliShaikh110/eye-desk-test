@@ -6,7 +6,7 @@ import Navbar from "../Nav/Navbar";
 const Home = () => {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Navbar2 />
       <Card />
     </>

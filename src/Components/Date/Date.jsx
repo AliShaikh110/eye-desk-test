@@ -1,7 +1,7 @@
 import React from "react";
 
 const DateStyle={
-  width: "35%",
+  width: "40%",
   height: "30px",
   margin: "5px 0 0 120px",
   color: "white",

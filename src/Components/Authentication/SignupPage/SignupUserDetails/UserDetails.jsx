@@ -10,10 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-// import UploadBtn from "../MiniComp/UploadBtn";
-// import UploadBtn from "../MiniComp/UploadBtn";
-// import SelectInp from "../MiniComp/SelectInp";
-// import Radio from "../MiniComp/Radio";
 import UploadBtnSignup from "../../../../SubComponent/SignupUploadBtn/UploadBtnSignup";
 import SelectInpSignup from "../../../../SubComponent/SignupSelectInp/SelectInpSignup";
 import RadioBtnSignup from "../../../../SubComponent/SignupRadio/RadioBtnSignup";
