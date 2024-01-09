@@ -8,64 +8,14 @@ import FormControl from "@mui/material/FormControl";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { useTheme } from "@mui/material/styles";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
-import Select from "@mui/material/Select";
-
-
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
-
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+import DropdownBtn from "../../../../SubComponent/DropdownButton/DropdownBtn";
 
 const PatientsTab = () => {
-    const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
   return (
     <>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Grid
           container
           style={{
@@ -78,6 +28,7 @@ const PatientsTab = () => {
                 <TextField
                   fullWidth
                   id="outlined-basic"
+                  value="First Name"
                   label="First Name "
                   variant="outlined"
                   size="small"
@@ -88,6 +39,7 @@ const PatientsTab = () => {
                 <TextField
                   fullWidth
                   id="outlined-basic"
+                  value="Middle Name"
                   label="Middle Name"
                   variant="outlined"
                   size="small"
@@ -133,6 +85,7 @@ const PatientsTab = () => {
                   fullWidth
                   id="outlined-basic"
                   label="Email"
+                  value="Email"
                   variant="outlined"
                   sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
                   size="small"
@@ -220,35 +173,18 @@ const PatientsTab = () => {
               >
                 Patient Type
               </Typography>
-              <FormControl sx={{ mt: 1, width: "100%" }}>
-                <InputLabel id="demo-multiple-name-label" size="small">
-                  SELECT
-                </InputLabel>
-                <Select
-                  sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                  labelId="demo-multiple-name-label"
-                  multiple
-                  value={personName}
-                  onChange={handleChange}
-                  label="SELECT"
-                  MenuProps={MenuProps}
-                  size="small"
-                >
-                  {names.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={getStyles(name, personName, theme)}
-                    >
-                      {name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+              <DropdownBtn
+                inputLabel="Select"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+              />
             </Grid>
           </Grid>
           <Grid container columnSpacing={3} sx={{ px: "10px", py: "5px" }}>
-             <Grid item sx={8} md={8} lg={8}>
+            <Grid item sx={8} md={8} lg={8}>
               <Typography
                 component="h4"
                 sx={{
@@ -299,67 +235,27 @@ const PatientsTab = () => {
                 Occupation
               </Typography>
               <Grid xs={12} sm={12} md={12} lg={12}>
-                <FormControl sx={{ m: 0, width: "100%" }}>
-                  <InputLabel id="demo-multiple-name-label" size="small">
-                    Service
-                  </InputLabel>
-                  <Select
-                    sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                    labelId="demo-multiple-name-label"
-                    id="demo-multiple-name"
-                    multiple
-                    value={personName}
-                    onChange={handleChange}
-                    input={<OutlinedInput label="SERVICE" />}
-                    MenuProps={MenuProps}
-                    size="small"
-                  >
-                    {names.map((name) => (
-                      <MenuItem
-                        key={name}
-                        value={name}
-                        style={getStyles(name, personName, theme)}
-                      >
-                        {name}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
+                <DropdownBtn
+                  inputLabel="Select"
+                  menuItems={[
+                    { value: "a", label: "Component 1" },
+                    { value: "b", label: "Component 2" },
+                    { value: "c", label: "Component 3" },
+                  ]}
+                />
               </Grid>
             </Grid>
           </Grid>
           <Grid container spacing={3} sx={{ px: "10px", paddingTop: "1rem" }}>
             <Grid item xs={12} sm={6} md={3} lg={3}>
-              <FormControl sx={{ width: "100%" }}>
-                <InputLabel id="demo-multiple-name-label" size="small">
-                  State
-                </InputLabel>
-                <Select
-                  sx={{
-                    backgroundColor: "white",
-                    borderRadius: "0.7rem",
-                    color: "#00000099",
-                  }}
-                  labelId="demo-multiple-name-label "
-                  id="demo-multiple-name"
-                  multiple
-                  value={personName}
-                  onChange={handleChange}
-                  input={<OutlinedInput label="Name" />}
-                  MenuProps={MenuProps}
-                  size="small"
-                >
-                  {names.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={getStyles(name, personName, theme)}
-                    >
-                      {name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+              <DropdownBtn
+                inputLabel="State"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+              />
             </Grid>
             <Grid item xs={12} sm={6} md={3} lg={3}>
               <TextField
@@ -406,37 +302,14 @@ const PatientsTab = () => {
             <Grid item xs={8}>
               <Grid container spacing={1} sx={{ px: "10px" }}>
                 <Grid item xs={12} sm={4} md={4} lg={4}>
-                  <FormControl sx={{ m: 0, width: "100%" }}>
-                    <InputLabel
-                      id="demo-multiple-name-label"
-                      label="Aadhar Card"
-                      size="small"
-                    >
-                      Aadhar Card
-                    </InputLabel>
-                    <Select
-                      sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                      labelId="demo-multiple-name-label"
-                      id="demo-multiple-name"
-                      multiple
-                      value={personName}
-                      onChange={handleChange}
-                      input={<OutlinedInput label="AADHAR CARD" />}
-                      MenuProps={MenuProps}
-                      label="AADHAR CARD"
-                      size="small"
-                    >
-                      {names.map((name) => (
-                        <MenuItem
-                          key={name}
-                          value={name}
-                          style={getStyles(name, personName, theme)}
-                        >
-                          {name}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
+                  <DropdownBtn
+                    inputLabel="Aadhar Card"
+                    menuItems={[
+                      { value: "a", label: "Component 1" },
+                      { value: "b", label: "Component 2" },
+                      { value: "c", label: "Component 3" },
+                    ]}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={8} md={8} lg={8}>
                   <TextField
@@ -454,7 +327,7 @@ const PatientsTab = () => {
         </Grid>
       </LocalizationProvider>
     </>
-  )
-}
+  );
+};
 
-export default PatientsTab
+export default PatientsTab;

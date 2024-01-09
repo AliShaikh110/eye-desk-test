@@ -3,6 +3,7 @@ import { Grid, Tab, Tabs, Typography } from "@mui/material";
 import AppointmentDetail from "../../AppointmentDetails/AppointmentDetail";
 import Navbar2 from "../../Date/NavbarTwo/Navbar2";
 import Navbar from "../../Nav/Navbar";
+import InsideOPDtabs from "./InsideOPDtabs";
 
 const OPDdata = [
   {
@@ -37,11 +38,6 @@ const OPDdata = [
   },
 ];
 
-const itemStyle = {
-  backgroundColor: "#D9D9D9",
-  color: "black",
-};
-
 const OPD = () => {
   const [value, setValue] = useState(0);
 
@@ -54,12 +50,7 @@ const OPD = () => {
       <Navbar />
       <Navbar2 />
       <Grid container>
-        <Grid
-          item
-          xs={12}
-          sm={5}
-          style={{ borderRight: "1px solid gray"}}
-        >
+        <Grid item xs={12} sm={5.5} style={{ borderRight: "1px solid gray" }}>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -68,7 +59,7 @@ const OPD = () => {
             scrollButtons="auto"
             variant="scrollable"
           >
-            {OPDdata.map((ele) => (
+            {OPDdata.map((ele, id) => (
               <Tab
                 key={ele.id}
                 label={
@@ -79,14 +70,18 @@ const OPD = () => {
                   </Typography>
                 }
                 style={{
-                  ...itemStyle,
+                  color:'black',
                   borderBottom: `5px solid ${ele.borderBottomColor}`,
+                  backgroundColor: value === id ? "inherit" : "#D9D9D9",
                 }}
               />
             ))}
           </Tabs>
+          <Grid item xs={12} sm={12} mt={2}>
+            <InsideOPDtabs selectedTab={value} />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={7}>
+        <Grid item xs={12} sm={6.5}>
           <AppointmentDetail />
         </Grid>
       </Grid>

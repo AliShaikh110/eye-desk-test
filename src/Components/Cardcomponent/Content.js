@@ -36,11 +36,11 @@ const cardsData = [
       tableData: [
         {
           id: 1,
-          patientId: "212289",
-          patientName: "No - OTs",
+          patientId: " ",
+          patientName: "No - OT's",
         },
       ],
-      headers: ["#", "Patient Name", "OT Time", " "],
+      headers: ["#", "Patient ID" ,"Patient Name", "OT Time", " "],
     },
     {
       title: "Another List Today",
@@ -76,8 +76,9 @@ const cardsData = [
           DischargeTime: "10:00 AM",
         },
       ],
-      headers: ["#", "Patient Name", "Discharge Time", " "],
+      headers: ["#","Patient ID", "Patient Name", "Discharge Time", " "],
     },
   ];
   
   export default cardsData;
+

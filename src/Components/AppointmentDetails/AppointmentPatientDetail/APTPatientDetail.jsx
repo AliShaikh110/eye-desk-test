@@ -1,12 +1,31 @@
 import { Button, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-const APTPatientDetail = ({ patientName }) => {
+const APTPatientDetail = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [patientName, setPatientName] = useState('Enter Name'); 
+
+  const handleDoubleClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleChange = (e) => {
+    setPatientName(e.target.value);
+  };
   return (
     <>
-      <Typography variant="h6" gutterBottom>
-        {patientName ? (<span>{patientName} (Male | 26 yrs)</span>) : ("Enter Name")}
-      </Typography>
+ <Typography variant="h6" gutterBottom onDoubleClick={handleDoubleClick}>
+      {isEditing ? (
+        <input
+          type="text"
+          value={patientName}
+          onChange={handleChange}
+          autoFocus
+        />
+      ) : (
+        <span>{patientName ? `${patientName}` : 'Enter Name'}</span>
+      )}
+    </Typography>
       <Typography variant="body1" paragraph>
         Patient ID : [AEH - XYZ - 123456]
       </Typography>

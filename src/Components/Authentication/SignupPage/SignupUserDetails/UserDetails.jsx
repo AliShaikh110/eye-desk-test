@@ -11,14 +11,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import UploadBtnSignup from "../../../../SubComponent/SignupUploadBtn/UploadBtnSignup";
-import SelectInpSignup from "../../../../SubComponent/SignupSelectInp/SelectInpSignup";
 import RadioBtnSignup from "../../../../SubComponent/SignupRadio/RadioBtnSignup";
 import { Link } from "react-router-dom";
+import DropdownBtn from "../../../../SubComponent/DropdownButton/DropdownBtn";
 
 const UserDetails = () => {
   return (
     <>
-      {/* <Box sx={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}}> */}
       <Box
         sx={{
           paddingX: "2.5rem",
@@ -184,7 +183,16 @@ const UserDetails = () => {
                 </Grid>
                 <Grid item md={12} sm={12}>
                   <Stack sx={{ width: "full" }}>
-                    <SelectInpSignup selectInpLabel={"Select Any Speciality"} />
+                  <DropdownBtn
+                inputLabel="Select Any Speciality"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+                style={ {m: 1,borderRadius:'5px', minWidth: 80,backgroundColor:'#f3f1f1'}}
+              />
+                    {/* <SelectInpSignup selectInpLabel={"Select Any Speciality"} /> */}
                   </Stack>
                 </Grid>
               </Grid>
@@ -233,17 +241,44 @@ const UserDetails = () => {
           <Grid container spacing={2}>
             <Grid item md={4} sm={6}>
               <Stack sx={{ width: "full" }}>
-                <SelectInpSignup selectInpLabel={"India"} />
+              <DropdownBtn
+                inputLabel="India"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+                style={ {m: 1,borderRadius:'5px', minWidth: 80,backgroundColor:'#f3f1f1'}}
+              />
+                {/* <SelectInpSignup selectInpLabel={"India"} /> */}
               </Stack>
             </Grid>
             <Grid item md={4} sm={6}>
               <Stack sx={{ width: "full" }}>
-                <SelectInpSignup selectInpLabel={"Timezone"} />
+              <DropdownBtn
+                inputLabel="Timezone"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+                style={ {m: 1,borderRadius:'5px', minWidth: 80,backgroundColor:'#f3f1f1'}}
+              />
+                {/* <SelectInpSignup selectInpLabel={"Timezone"} /> */}
               </Stack>
             </Grid>
             <Grid item md={4} sm={6}>
               <Stack sx={{ width: "full" }}>
-                <SelectInpSignup selectInpLabel={"Currency"} />
+              <DropdownBtn
+                inputLabel="Currency"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+                style={ {m: 1,borderRadius:'5px', minWidth: 80,backgroundColor:'#f3f1f1'}}
+              />
+                {/* <SelectInpSignup selectInpLabel={"Currency"} /> */}
               </Stack>
             </Grid>
             <Grid item md={4} sm={6}>

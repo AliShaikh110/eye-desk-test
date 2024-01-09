@@ -1,10 +1,10 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid } from "@mui/material";
 import React from "react";
 
 const CaseDetails = () => {
   return (
     <>
-      <Typography variant="body10" paragraph>
+      <Container variant="body10" paragraph>
         <div style={{ display: "flex", alignItems: "center" }}>
           <h5>Case Details : </h5>
           <Grid container spacing={1}>
@@ -16,7 +16,8 @@ const CaseDetails = () => {
                   borderRadius: "5px",
                   fontSize: "10px",
                   height: "30px",
-                  cursor:'pointer'
+                  cursor:'pointer',
+                  color:'white'
                 }}
               >
                 (Click to Add Name) -AEH-XYZ-1234{" "}
@@ -44,7 +45,7 @@ const CaseDetails = () => {
             </Grid>
           </Grid>
         </div>
-      </Typography>
+      </Container>
     </>
   );
 };

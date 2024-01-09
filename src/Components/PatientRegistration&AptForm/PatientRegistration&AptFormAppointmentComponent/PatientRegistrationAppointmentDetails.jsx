@@ -11,63 +11,14 @@ import Typography from "@mui/material/Typography";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import { useTheme } from "@mui/material/styles";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import MenuItem from "@mui/material/MenuItem";
-// import names from "../ContentPatientRegistration&AptForm/ContentRegistrationForm";
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
-
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+import DropdownBtn from "../../../SubComponent/DropdownButton/DropdownBtn";
 
 const PatientRegistrationAppointmentDetails = () => {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
   const [value, setValue] = React.useState(null);
 
   return (
     <>
-      <div>
+      <div style={{}}>
         <Typography
           component="h4"
           sx={{
@@ -178,32 +129,14 @@ const PatientRegistrationAppointmentDetails = () => {
             >
               Location
             </Typography>
-            <FormControl sx={{ m: 0, width: "100%" }}>
-              <InputLabel id="demo-multiple-name-label" size="small">
-                XYZ EYE HOSPITAL
-              </InputLabel>
-              <Select
-                sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                labelId="demo-multiple-name-label"
-                id="demo-multiple-name"
-                multiple
-                value={personName}
-                onChange={handleChange}
-                input={<OutlinedInput label="XYZ EYE HOSPITAL" />}
-                MenuProps={MenuProps}
-                size="small"
-              >
-                {names.map((name) => (
-                  <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, personName, theme)}
-                  >
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <DropdownBtn
+              inputLabel="XYZ EYE HOSPITAL"
+              menuItems={[
+                { value: "a", label: "Component 1" },
+                { value: "b", label: "Component 2" },
+                { value: "c", label: "Component 3" },
+              ]}
+            />
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -221,32 +154,14 @@ const PatientRegistrationAppointmentDetails = () => {
             >
               Consultant
             </Typography>
-            <FormControl sx={{ m: 0, width: "100%" }}>
-              <InputLabel id="demo-multiple-name-label" size="small">
-                Neil Down
-              </InputLabel>
-              <Select
-                sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                labelId="demo-multiple-name-label"
-                id="demo-multiple-name"
-                multiple
-                value={personName}
-                onChange={handleChange}
-                input={<OutlinedInput label="Neil Down" />}
-                MenuProps={MenuProps}
-                size="small"
-              >
-                {names.map((name) => (
-                  <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, personName, theme)}
-                  >
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <DropdownBtn
+              inputLabel="Neil Down"
+              menuItems={[
+                { value: "a", label: "Component 1" },
+                { value: "b", label: "Component 2" },
+                { value: "c", label: "Component 3" },
+              ]}
+            />
           </Grid>
         </Grid>
         <Grid
@@ -270,32 +185,14 @@ const PatientRegistrationAppointmentDetails = () => {
             >
               Appointment Types
             </Typography>
-            <FormControl sx={{ m: 0, width: "100%" }}>
-              <InputLabel id="demo-multiple-name-label" size="small">
-                Review
-              </InputLabel>
-              <Select
-                sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                labelId="demo-multiple-name-label"
-                id="demo-multiple-name"
-                multiple
-                value={personName}
-                onChange={handleChange}
-                input={<OutlinedInput label="XYZ EYE HOSPITAL" />}
-                MenuProps={MenuProps}
-                size="small"
-              >
-                {names.map((name) => (
-                  <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, personName, theme)}
-                  >
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <DropdownBtn
+              inputLabel="Review"
+              menuItems={[
+                { value: "a", label: "Component 1" },
+                { value: "b", label: "Component 2" },
+                { value: "c", label: "Component 3" },
+              ]}
+            />
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -313,32 +210,14 @@ const PatientRegistrationAppointmentDetails = () => {
             >
               Appointment Categories
             </Typography>
-            <FormControl sx={{ m: 0, width: "100%" }}>
-              <InputLabel id="demo-multiple-name-label" size="small">
-                Select Appointment Categories
-              </InputLabel>
-              <Select
-                sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                labelId="demo-multiple-name-label"
-                id="demo-multiple-name"
-                multiple
-                value={personName}
-                onChange={handleChange}
-                input={<OutlinedInput label="NEIL DOWN" />}
-                MenuProps={MenuProps}
-                size="small"
-              >
-                {names.map((name) => (
-                  <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, personName, theme)}
-                  >
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <DropdownBtn
+              inputLabel="Select Appointment Categories"
+              menuItems={[
+                { value: "a", label: "Component 1" },
+                { value: "b", label: "Component 2" },
+                { value: "c", label: "Component 3" },
+              ]}
+            />
           </Grid>
         </Grid>
         <Grid container>

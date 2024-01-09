@@ -1,20 +1,11 @@
-import { Button, Grid, Typography } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import { Button, Container, Grid } from "@mui/material";
 import React from "react";
+import DropdownBtn from "../../../SubComponent/DropdownButton/DropdownBtn";
 
 const TemplateDetailsPatient = () => {
-  const [newTemplate, setnewTemplate] = React.useState("");
-
-  const handleChange = (event) => {
-    setnewTemplate(event.target.value);
-  };
-
   return (
     <>
-      <Typography variant="body10" paragraph>
+      <Container variant="body10" paragraph>
         <div
           style={{
             display: "flex",
@@ -33,24 +24,15 @@ const TemplateDetailsPatient = () => {
             }}
           >
             <Grid item>
-              <FormControl variant="filled" size="small" sx={{ m: 1, minWidth: 80, }}>
-                <InputLabel id="demo-simple-select-filled-label">
-                  New
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-filled-label"
-                  id="demo-simple-select-filled"
-                  value={newTemplate}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
+              <DropdownBtn
+                inputLabel="New"
+                menuItems={[
+                  { value: "a", label: "Component 1" },
+                  { value: "b", label: "Component 2" },
+                  { value: "c", label: "Component 3" },
+                ]}
+                style={ {m: 1, minWidth: 80}}
+              />
             </Grid>
             <Grid item>
               <Button
@@ -65,7 +47,7 @@ const TemplateDetailsPatient = () => {
             </Grid>
           </Grid>
         </div>
-      </Typography>
+      </Container>
     </>
   );
 };
