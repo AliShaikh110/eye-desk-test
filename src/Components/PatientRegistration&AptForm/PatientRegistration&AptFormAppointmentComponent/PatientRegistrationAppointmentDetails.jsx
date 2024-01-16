@@ -12,13 +12,18 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import DropdownBtn from "../../../SubComponent/DropdownButton/DropdownBtn";
+import { useAppContext } from "../../../AppContext/AppContext";
 
 const PatientRegistrationAppointmentDetails = () => {
-  const [value, setValue] = React.useState(null);
+  const { setDate } = useAppContext();
+
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+  };
 
   return (
     <>
-      <div style={{}}>
+      <div>
         <Typography
           component="h4"
           sx={{
@@ -100,8 +105,9 @@ const PatientRegistrationAppointmentDetails = () => {
               <Stack spacing={1} sx={{ minWidth: "240px" }}>
                 <DateTimePicker
                   sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
-                  value={value}
-                  onChange={setValue}
+                  value={null}
+                  onChange={handleDateChange}
+                  slotProps={{ textField: { size: "small" } }}
                   referenceDate={dayjs("2022-04-17T15:30")}
                 />
               </Stack>

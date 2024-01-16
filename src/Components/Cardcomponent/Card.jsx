@@ -15,7 +15,6 @@ const Card = () => {
           sm={12}
           xs={12}
           md={9}
-          style={{ borderRight: "0.5px solid gray" }}
         >
           {cardsData.map((data, index) => (
             <TableCard

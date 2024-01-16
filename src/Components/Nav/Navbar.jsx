@@ -58,16 +58,6 @@ const Navbar = () => {
     border: "1px solid gray",
   };
 
-  // const logoLinkStyle ={
-  //   marginRight: "10px",
-  //   display: { sm: "none", md: "flex" },
-  //   fontFamily: "monospace",
-  //   fontWeight: 700,
-  //   letterSpacing: "0.3rem",
-  //   color: "black",
-  //   textDecoration: "none",
-  // }
-
   return (
     <>
       <AppBar position="sticky" sx={{ backgroundColor: "white", top: 0 }}>

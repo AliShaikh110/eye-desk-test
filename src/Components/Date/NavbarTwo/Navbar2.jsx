@@ -24,6 +24,7 @@ const Navbar2 = () => {
 export default Navbar2;
 
 const NavRight = function () {
+  
   return (
     <>
       <div

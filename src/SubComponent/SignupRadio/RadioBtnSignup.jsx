@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 
+
 const RadioBtnSignup = ({ buttonName, fontWeight, fontSize, color }) => {
   return (
     <>
@@ -25,3 +26,4 @@ const RadioBtnSignup = ({ buttonName, fontWeight, fontSize, color }) => {
 };
 
 export default RadioBtnSignup;
+ 

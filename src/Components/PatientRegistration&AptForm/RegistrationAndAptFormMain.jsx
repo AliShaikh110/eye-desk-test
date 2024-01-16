@@ -7,7 +7,7 @@ const RegistrationAndAptFormMain = () => {
   return (
     <>
       <Box>
-      <h1 style={{ textAlign: "center" }}>Patient and registration form</h1>
+      <h1 style={{ textAlign: "center", lineHeight:'10px' }}>Patient registration & Appointment form</h1>
         <Grid
           container
           style={{

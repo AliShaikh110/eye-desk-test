@@ -20,6 +20,12 @@ const Date = () => {
         type="date"
         style={DateStyle}
       />
+        {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DemoContainer components={["DatePicker"]}>
+          <DatePicker sx={{ fontSize: "15px" }} label="Pick a date" />
+        </DemoContainer>
+      </LocalizationProvider>
+     */}
     </div>
   );
 };

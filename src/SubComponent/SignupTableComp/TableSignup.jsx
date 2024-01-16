@@ -7,7 +7,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Stack, Typography } from "@mui/material";
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 const TableSignup = () => {
   return (
@@ -63,13 +62,8 @@ const TableSignup = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <CurrencyRupeeIcon
-                  fontSize="small"
-                  color="primary"
-                  sx={{ fontSize: "1rem" }}
-                />
                 <Typography fontSize={"0.85rem"} color={"primary"}>
-                  15,000/year
+                ₹15,000/year
                 </Typography>
               </Stack>
             </TableCell>
@@ -79,13 +73,8 @@ const TableSignup = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <CurrencyRupeeIcon
-                  fontSize="small"
-                  color="primary"
-                  sx={{ fontSize: "1rem" }}
-                />
                 <Typography fontSize={"0.85rem"} color={"primary"}>
-                  54,000/year
+                ₹54,000/year
                 </Typography>
               </Stack>
             </TableCell>
@@ -95,13 +84,8 @@ const TableSignup = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <CurrencyRupeeIcon
-                  fontSize="small"
-                  color="primary"
-                  sx={{ fontSize: "1rem" }}
-                />
                 <Typography fontSize={"0.85rem"} color={"primary"}>
-                  99,000/year
+                ₹99,000/year
                 </Typography>
               </Stack>
             </TableCell>
@@ -111,13 +95,8 @@ const TableSignup = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <CurrencyRupeeIcon
-                  fontSize="small"
-                  color="primary"
-                  sx={{ fontSize: "1rem" }}
-                />
                 <Typography fontSize={"0.85rem"} color={"primary"}>
-                  1,72,500/year
+                ₹1,72,500/year
                 </Typography>
               </Stack>
             </TableCell>

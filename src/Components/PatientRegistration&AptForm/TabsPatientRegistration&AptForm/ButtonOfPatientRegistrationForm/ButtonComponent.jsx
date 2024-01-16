@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-const HistoryBtn = ({ sx, label}) => {
+const ButtonComponent = ({ sx, label}) => {
   return (
     <>
       <Button sx={sx} variant="contained">
@@ -11,4 +11,4 @@ const HistoryBtn = ({ sx, label}) => {
   );
 };
 
-export default HistoryBtn;
+export default ButtonComponent;

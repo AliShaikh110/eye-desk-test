@@ -11,8 +11,11 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import DropdownBtn from "../../../../SubComponent/DropdownButton/DropdownBtn";
+import { useAppContext } from "../../../../AppContext/AppContext";
 
 const PatientsTab = () => {
+  const { name, setName, setMiddleName, middleName,phone,setPhone } = useAppContext();
+
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -28,8 +31,9 @@ const PatientsTab = () => {
                 <TextField
                   fullWidth
                   id="outlined-basic"
-                  value="First Name"
                   label="First Name "
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   variant="outlined"
                   size="small"
                   sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
@@ -39,8 +43,9 @@ const PatientsTab = () => {
                 <TextField
                   fullWidth
                   id="outlined-basic"
-                  value="Middle Name"
                   label="Middle Name"
+                  value={middleName}
+                  onChange={(e) => setMiddleName(e.target.value)}
                   variant="outlined"
                   size="small"
                   sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
@@ -63,9 +68,12 @@ const PatientsTab = () => {
               <Grid item sx={4} xs={12} sm={12} md={4} lg={4}>
                 <TextField
                   fullWidth
+                  type="phone"
                   id="outlined-basic"
                   label="Mobile Number"
                   variant="outlined"
+                  value={phone}
+                  onChange={(e)=>setPhone(e.target.value)}
                   sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
                   size="small"
                 />
@@ -85,7 +93,6 @@ const PatientsTab = () => {
                   fullWidth
                   id="outlined-basic"
                   label="Email"
-                  value="Email"
                   variant="outlined"
                   sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
                   size="small"
@@ -114,14 +121,14 @@ const PatientsTab = () => {
                   name="row-radio-buttons-group"
                 >
                   <Grid container>
-                    <Grid item sx={6} xs={12} sm={6} md={6} lg={6}>
+                    <Grid item sx={6} xs={12} sm={6} md={7} lg={6}>
                       <FormControlLabel
                         value="female"
                         control={<Radio />}
                         label="Female"
                       />
                     </Grid>
-                    <Grid item sx={6} xs={12} sm={6} md={6} lg={6}>
+                    <Grid item sx={6} xs={12} sm={6} md={5} lg={6}>
                       <FormControlLabel
                         value="male"
                         control={<Radio />}
@@ -138,8 +145,8 @@ const PatientsTab = () => {
                 sx={{
                   fontSize: "14px",
                   position: "relative",
-                  marginTop: "5PX",
-                  marginBottom: "5px",
+                  marginTop: "2px",
+                  marginBottom: "2px",
                   fontWeight: 600,
                   color: "#373737",
                 }}
@@ -148,14 +155,9 @@ const PatientsTab = () => {
               </Typography>
               <Box components={["DatePicker"]}>
                 <DatePicker
-                  sx={{ backgroundColor: "white", borderRadius: "0.7rem" }}
                   label="DD/MM/YYYY"
-                  size="small"
-                  slotProps={{
-                    textField: {
-                      fullWidth: "true",
-                    },
-                  }}
+                  slotProps={{ textField: { size: "small" } }}
+                  sx={{ backgroundColor: "white" }}
                 />
               </Box>
             </Grid>

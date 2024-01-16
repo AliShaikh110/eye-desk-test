@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import RegistrationAndAptFormMain from "../../PatientRegistration&AptForm/RegistrationAndAptFormMain";
+import { useAppContext } from "../../../AppContext/AppContext";
 
 const styleModal = {
   position: "absolute",
@@ -17,10 +18,18 @@ const styleModal = {
 };
 
 const AddModalBtn = () => {
+  const { setName, setAddress, setMiddleName} = useAppContext();
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleSave = (modalName, modalMiddleName,modalAddress) => {
+    setName(modalName);
+    setMiddleName(modalMiddleName);
+    setAddress(modalAddress);
+    setOpen(false);
+  };
 
   return (
     <>
@@ -60,7 +69,7 @@ const AddModalBtn = () => {
             X
           </Button>
           <Box>
-            <RegistrationAndAptFormMain />
+            <RegistrationAndAptFormMain onSave={handleSave} onClose={handleClose} />
           </Box>
         </Box>
       </Modal>

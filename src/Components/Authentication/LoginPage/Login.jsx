@@ -12,12 +12,12 @@ const Login = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          marginTop: "50px",
         }}
       >
         <Box
           sx={{
             width: "50%",
-            height: "100vh",
             bgcolor: "#F5F5F5",
             paddingX: "1.5rem",
             borderRadius: "1rem",
@@ -96,11 +96,11 @@ const Login = () => {
           >
             <Link to="/Dashboard">
               <Button
+                variant="contained"
                 sx={{
                   width: "19.35rem",
-                  bgcolor: "#1757C2",
-                  color: "black",
                   paddingY: "0.6rem",
+                  fontWeight: "bold",
                 }}
               >
                 Submit

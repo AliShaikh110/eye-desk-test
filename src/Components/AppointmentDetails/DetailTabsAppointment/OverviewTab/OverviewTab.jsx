@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import OverviewTabsPatientDetails from "./OverviewTabsPatientDetails/OverviewTabsPatientDetails";
+import OverviewTabBillsDetails from "./OverviewTabBillsDetails/OverviewTabBillsDetails";
 
 const OverviewTab = () => {
   return (
-    <div>OverviewTab</div>
-  )
-}
+    <>
+      <OverviewTabsPatientDetails/>  
+      <hr />
+      <OverviewTabBillsDetails/>
+    </>
+  );
+};
 
-export default OverviewTab
+export default OverviewTab;

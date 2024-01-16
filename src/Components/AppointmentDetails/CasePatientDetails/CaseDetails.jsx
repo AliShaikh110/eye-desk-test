@@ -9,37 +9,20 @@ const CaseDetails = () => {
           <h5>Case Details : </h5>
           <Grid container spacing={1}>
             <Grid item>
-              <button
-                style={{
-                  backgroundColor: "#1757C2",
-                  border: "none",
-                  borderRadius: "5px",
-                  fontSize: "10px",
-                  height: "30px",
-                  cursor:'pointer',
-                  color:'white'
-                }}
+              <Button
+                variant="contained"
+                sx={{ fontSize: "10px", padding: "3px 6px" }}
               >
-                (Click to Add Name) -AEH-XYZ-1234{" "}
-              </button>
+                (Click to Add Name) -AEH-XYZ-1234
+              </Button>
             </Grid>
             <Grid item>
-              <Button
-                style={{
-                  border: "none",
-                  fontSize: "10px",
-                }}
-              >
+              <Button variant="text" sx={{ fontSize: "10px" }}>
                 All Case
               </Button>
             </Grid>
             <Grid item>
-              <Button
-                style={{
-                  fontSize: "10px",
-                  border: "none",
-                }}
-              >
+              <Button variant="text" sx={{ fontSize: "10px" }}>
                 Change Case
               </Button>
             </Grid>

@@ -1,41 +1,28 @@
 import { Button, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
+import { useAppContext } from "../../../AppContext/AppContext";
 
 const APTPatientDetail = () => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [patientName, setPatientName] = useState('Enter Name'); 
-
-  const handleDoubleClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleChange = (e) => {
-    setPatientName(e.target.value);
-  };
+  const { name, phone, middleName,date } = useAppContext();
   return (
     <>
- <Typography variant="h6" gutterBottom onDoubleClick={handleDoubleClick}>
-      {isEditing ? (
-        <input
-          type="text"
-          value={patientName}
-          onChange={handleChange}
-          autoFocus
-        />
-      ) : (
-        <span>{patientName ? `${patientName}` : 'Enter Name'}</span>
-      )}
-    </Typography>
-      <Typography variant="body1" paragraph>
+      <br />
+      <Typography variant="body" paragraph>
+        Name : {name}
+      </Typography>
+      <Typography variant="body" paragraph>
+        Middle Name : {middleName}
+      </Typography>
+      <Typography variant="body" paragraph>
         Patient ID : [AEH - XYZ - 123456]
       </Typography>
-      <Typography variant="body2" paragraph>
-        Registration Date : 12-23-2021
+      <Typography variant="body" paragraph>
+      Registration Date : {date ? date.toLocaleString() : 'select date'}
+     </Typography>
+      <Typography variant="body" paragraph>
+        Primary Contact : {phone}
       </Typography>
-      <Typography variant="body3" paragraph>
-        Primary Contact : 39749374973
-      </Typography>
-      <Typography variant="body4" paragraph>
+      <Typography variant="body" paragraph>
         Patient Referral : none{" "}
         <span>
           <Button style={{ fontWeight: "800", fontSize: "10px" }}>
@@ -51,42 +38,22 @@ const APTPatientDetail = () => {
           <p style={{ marginRight: "30px" }}>Send:</p>
           <Grid container spacing={1}>
             <Grid item>
-              <Button
-                style={{
-                  fontSize: "10px",
-                  border: "1px solid #1757C2",
-                }}
-              >
+              <Button variant="outlined" sx={{ fontSize: "10px" }}>
                 Receptionist
               </Button>
             </Grid>
             <Grid item>
-              <Button
-                style={{
-                  fontSize: "10px",
-                  border: "1px solid #1757C2",
-                }}
-              >
+              <Button variant="outlined" sx={{ fontSize: "10px" }}>
                 AR NCT
               </Button>
             </Grid>
             <Grid item>
-              <Button
-                style={{
-                  fontSize: "10px",
-                  border: "1px solid #1757C2",
-                }}
-              >
+              <Button variant="outlined" sx={{ fontSize: "10px" }}>
                 Optometrist
               </Button>
             </Grid>
             <Grid item>
-              <Button
-                style={{
-                  fontSize: "10px",
-                  border: "1px solid #1757C2",
-                }}
-              >
+              <Button variant="outlined" sx={{ fontSize: "10px" }}>
                 Cashier
               </Button>
             </Grid>

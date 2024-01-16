@@ -8,20 +8,23 @@ import STORE from "./Components/MenuComp/STOREcomp/Store";
 import Login from "./Components/Authentication/LoginPage/Login";
 import Signup from "./Components/Authentication/SignupPage/Signup";
 import Payments from "./Components/PaymentGateway/Payments";
+import { AppProvider } from "./AppContext/AppContext";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Login/>} />
-        <Route path="/Signup" element={<Signup/>} />
-        <Route path="/Dashboard" element={<Home />} />
-        <Route path="/OT" element={<OT />} />
-        <Route path="/IPD" element={<IPD />} />
-        <Route path="/OPD" element={<OPD />} />
-        <Route path="/STORE" element={<STORE />} />
-        <Route path="/Payment" element={<Payments/>} />
-      </Routes>
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/Dashboard" element={<Home />} />
+          <Route path="/OT" element={<OT />} />
+          <Route path="/IPD" element={<IPD />} />
+          <Route path="/OPD" element={<OPD />} />
+          <Route path="/STORE" element={<STORE />} />
+          <Route path="/Payment" element={<Payments />} />
+        </Routes>
+      </AppProvider>
     </div>
   );
 }

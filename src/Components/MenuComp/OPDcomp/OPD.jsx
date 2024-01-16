@@ -4,6 +4,17 @@ import AppointmentDetail from "../../AppointmentDetails/AppointmentDetail";
 import Navbar2 from "../../Date/NavbarTwo/Navbar2";
 import Navbar from "../../Nav/Navbar";
 import InsideOPDtabs from "./InsideOPDtabs";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 const OPDdata = [
   {
@@ -45,6 +56,7 @@ const OPD = () => {
     setValue(newValue);
   };
 
+
   return (
     <>
       <Navbar />
@@ -70,7 +82,7 @@ const OPD = () => {
                   </Typography>
                 }
                 style={{
-                  color:'black',
+                  color: "black",
                   borderBottom: `5px solid ${ele.borderBottomColor}`,
                   backgroundColor: value === id ? "inherit" : "#D9D9D9",
                 }}
@@ -82,7 +94,9 @@ const OPD = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6.5}>
-          <AppointmentDetail />
+          <StyledContainer>
+            <AppointmentDetail />
+          </StyledContainer>
         </Grid>
       </Grid>
     </>

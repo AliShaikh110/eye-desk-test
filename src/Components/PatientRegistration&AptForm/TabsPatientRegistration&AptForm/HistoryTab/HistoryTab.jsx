@@ -8,7 +8,7 @@ import Paediatric from "./HistoryComponents/Paediatric";
 const HistoryTab = () => {
   return (
     <>
-      <Box sx={{ marginTop: "1px", marginBottom: "15px" }}>
+      <Box>
         <div style={{ padding: "1rem" }}>
           <Opthalmic />
           <Systemic />
