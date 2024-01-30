@@ -13,7 +13,7 @@ function ArrowBtnLayout({
     return (
         <Grid container>
             <Grid item sm={12} md={12} paddingX={"0.5rem"} paddingY={"0.5rem"}>
-                <ArrowBtn  onClick={onClick} hover={hover} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={label} backgroundColor={backgroundColor} endIcon={<ForwardIcon fontSize="large" />} />
+                <ArrowBtn  onClick={onClick} hover={hover} mdFontSize={"0.85rem"} lgFontSize={"0.8rem"} label={label} backgroundColor={backgroundColor} endIcon={<ForwardIcon fontSize="large" />} />
             </Grid>
         </Grid>
     )
