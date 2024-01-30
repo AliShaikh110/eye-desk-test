@@ -20,7 +20,7 @@ export function LabelCommentLayout({size,
                 </Typography>
             </Grid>
             <Grid item sm={smTextField} md={mdTextField}>
-                <TextFieldRefraction size={size} width={"100%"} backgroundColor={"white"} />
+                <TextFieldRefraction size={size}  width={"100%"} backgroundColor={"white"} />
             </Grid>
         </Grid>
     )
