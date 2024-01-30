@@ -9,6 +9,7 @@ import Login from "./Components/Authentication/LoginPage/Login";
 import Signup from "./Components/Authentication/SignupPage/Signup";
 import Payments from "./Components/PaymentGateway/Payments";
 import { AppProvider } from "./AppContext/AppContext";
+import Refraction from "./Components/RefractionComponent/Main";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Dashboard" element={<Home />} />
+          <Route path="/Refraction" element={<Refraction />} />
           <Route path="/OT" element={<OT />} />
           <Route path="/IPD" element={<IPD />} />
           <Route path="/OPD" element={<OPD />} />
