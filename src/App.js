@@ -10,6 +10,7 @@ import Signup from "./Components/Authentication/SignupPage/Signup";
 import Payments from "./Components/PaymentGateway/Payments";
 import { AppProvider } from "./AppContext/AppContext";
 import Refraction from "./Components/RefractionComponent/Main";
+import EyeTemplate from "./Components/EyeTemplate/Main/Main";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Dashboard" element={<Home />} />
           <Route path="/Refraction" element={<Refraction />} />
+          <Route path="/EyeTemplate" element={<EyeTemplate />} />
           <Route path="/OT" element={<OT />} />
           <Route path="/IPD" element={<IPD />} />
           <Route path="/OPD" element={<OPD />} />

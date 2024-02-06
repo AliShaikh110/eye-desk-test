@@ -17,10 +17,10 @@ export function Pmt() {
                     <Grid container >
                         <Grid item sm={1.5} md={1.8} lg={1.5} >
                             <Box className="myBtn" marginBottom={"0.5rem"}>
-                                <ArrowBtn label={"Fill"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
+                                <ArrowBtn label={"Fill"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
                             </Box>
                             <Box className="myBtn">
-                                <ArrowBtn label={"Copy"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
+                                <ArrowBtn label={"Copy"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
                             </Box>
                             
                         </Grid>

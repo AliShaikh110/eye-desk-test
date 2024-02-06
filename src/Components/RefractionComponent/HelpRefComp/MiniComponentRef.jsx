@@ -8,7 +8,6 @@ import { TextField } from "@mui/material";
 export default function SelectAutoWidth({
   selectInpLabel,
   height,
-  paddingTop,
   labelSpace="Select",
   bgcolor,
   mdFontSize,
@@ -33,7 +32,7 @@ export default function SelectAutoWidth({
           autoWidth
           label={labelSpace}
           size='small' 
-          sx={{bgcolor:bgcolor,minWidth:"0px", width:{width}}}
+          sx={{bgcolor:bgcolor,minWidth:"0px", width:{width}, height:{height}}}
           
           
           

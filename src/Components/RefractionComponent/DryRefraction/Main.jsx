@@ -20,13 +20,13 @@ export function DryRefraction() {
                         <Grid item sm={1.5} md={1.8} lg={1.5}>
                             <Box marginBottom={"0.6rem"}>
                                 <Box sx={{ width: "100%" }} className="myBtn" >
-                                    <ArrowBtn label={"Fill"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ marginLeft: "2px", fontSize: "large" }} />} />
+                                    <ArrowBtn label={"Fill"} padding={"0.05rem 0.0rem"} width={"3.5rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ marginLeft: "2px", fontSize: "large" }} />} />
                                 </Box>
                             </Box>
 
                             <Box className="myBtn">
 
-                                <ArrowBtn label={"Copy"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
+                                <ArrowBtn label={"Copy"} padding={"0.05rem 0.0rem"} width={"3.5rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
                             </Box>
                         </Grid>
 

@@ -12,12 +12,12 @@ const Login = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
-          marginTop: "50px",
+          marginTop:{sm:"35px", md:"40px", lg:"50px"} 
         }}
       >
         <Box
           sx={{
-            width: "50%",
+            width:{md:"25rem", lg:"28rem"} ,
             bgcolor: "#F5F5F5",
             paddingX: "1.5rem",
             borderRadius: "1rem",
@@ -42,19 +42,19 @@ const Login = () => {
           <Stack
             justifyContent={"center"}
             flexDirection={"row"}
-            sx={{ marginTop: "3rem" }}
+            sx={{ marginTop: "1rem" }}
           >
             <Box>
-              <img src={eyeDesk} alt="logo" />
+              <img width={"200rem"} src={eyeDesk} alt="logo" />
             </Box>
           </Stack>
           <Stack
             justifyContent={"center"}
             flexDirection={"row"}
-            sx={{ marginTop: "2rem" }}
+            sx={{ marginTop:{sm:"1rem", md:"1.5rem", lg:"2rem"}  }}
           >
             <Typography
-              sx={{ fontWeight: 800, color: "#1757C2", fontSize: "1.7rem" }}
+              sx={{ fontWeight: 800, color: "#1757C2", fontSize:{sm:"1.25rem", md:"1.5rem", lg:"1.7rem"}  }}
             >
               Login
             </Typography>
@@ -62,7 +62,7 @@ const Login = () => {
           <Stack
             justifyContent={"center"}
             flexDirection={"row"}
-            sx={{ marginTop: "2rem" }}
+            sx={{ marginTop:{sm:"2.5rem", md:"2rem"}  }}
           >
             <Stack sx={{ width: "22.75rem" }}>
               <TextField
@@ -93,13 +93,15 @@ const Login = () => {
             flexDirection={"row"}
             justifyContent={"center"}
             marginTop={"5.5rem"}
+            sx={{marginTop:{sm:"4rem", md:"3.8rem", lg:"5.5rem"}}}
+            marginBottom={"0.25rem"}
           >
-            <Link to="/Dashboard">
+            <Link to="/Signup">
               <Button
                 variant="contained"
                 sx={{
                   width: "19.35rem",
-                  paddingY: "0.6rem",
+                  paddingY:{md:"0.45rem", lg:"0.6rem"},
                   fontWeight: "bold",
                 }}
               >
@@ -107,7 +109,7 @@ const Login = () => {
               </Button>
             </Link>
           </Stack>
-          <Stack flexDirection={"row"} justifyContent={"center"}>
+          <Stack flexDirection={"row"} justifyContent={"center"} sx={{paddingBottom:{sm:"2.8rem", md:"2.25rem"}}}>
             <Typography sx={{ color: "#636363", fontSize: "0.9rem" }}>
               Don't have an account?
             </Typography>

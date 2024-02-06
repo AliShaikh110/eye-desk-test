@@ -16,10 +16,10 @@ export  function FiveColInpTable({
                     <Grid container bgcolor={"#337eff"}>
 
                         <Grid item sm={2.4} md={2.4}></Grid>
-                        <Grid item sm={2.4} md={2.4}><Typography variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Sph</Typography> </Grid>
-                        <Grid item sm={2.4} md={2.4}><Typography variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Cyl</Typography> </Grid>
-                        <Grid item sm={2.4} md={2.4}><Typography variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Axis</Typography> </Grid>
-                        <Grid item sm={2.4} md={2.4}><Typography variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Vision</Typography> </Grid>
+                        <Grid item sm={2.4} md={2.4} ><Typography textAlign={"center"} variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Sph</Typography> </Grid>
+                        <Grid item sm={2.4} md={2.4} ><Typography textAlign={"center"} variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Cyl</Typography> </Grid>
+                        <Grid item sm={2.4} md={2.4} ><Typography textAlign={"center"} variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Axis</Typography> </Grid>
+                        <Grid item sm={2.4} md={2.4} ><Typography textAlign={"center"} variant="subtitle1" fontSize={{sm:"0.9rem", md:"0.8rem", lg:"0.9rem"}} fontWeight={600} color={"white"}>Vision</Typography> </Grid>
                     </Grid>
                 </Grid>
 

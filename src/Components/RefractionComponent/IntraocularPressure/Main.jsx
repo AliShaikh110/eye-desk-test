@@ -19,20 +19,20 @@ export function Intraocular() {
 
                 <Grid item sm={12} md={12} >
                     <Grid container  >
-                        <Grid item sm={0} md={1.5}>
+                        <Grid item sm={1.5} md={1.5}>
                             {/* <Box sx={{ width: "100%" }} className="myBtn">
                                 <ArrowBtn hover label={"Fill"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ fontSize: "large" }} />} />
                             </Box> */}
                         </Grid>
-                        <Grid item sm={12} md={10.5} >
+                        <Grid item sm={10.5} md={10.5} >
                             <Grid container rowSpacing={"1rem"} columnSpacing={4} >
-                                <Grid item md={5}>
+                                <Grid item sm={5} md={5}>
                                     <ColorSlider />
                                 </Grid>
-                                <Grid item md={6}>
+                                <Grid item sm={6} md={6}>
 
                                     <Grid container columnSpacing={0.5}>
-                                        <Grid item sm={9} md={9}>
+                                        <Grid item  sm={9} md={9}>
                                             <TextFieldRefraction size={"small"} width={"100%"} backgroundColor={"white"} />
                                         </Grid>
                                         <Grid item sm={3} md={3} display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"start"}>
@@ -43,7 +43,7 @@ export function Intraocular() {
                                     </Grid>
                                 </Grid>
                                 {/* <Grid item md={4}></Grid> */}
-                                <Grid item md={6}  >
+                                <Grid item sm={6} md={6}  >
                                     <TimerPick />
                                 </Grid>
                             </Grid>

@@ -3,22 +3,22 @@ import ButtonComp from "./HelpRefComp";
 
 export default function ArrowBtn({
     label,
-    startIcon, 
-    endIcon,
-    padding="1.5px 15px",
-    mdFontSize="0.78rem",
-    lgFontSize="0.85rem",
-    smFontSize="0.8rem",
+    padding="0.25rem 0.95rem",
+    mdFontSize="0.75rem",
+    lgFontSize="0.75rem",
+    smFontSize="0.75rem",
     backgroundColor="#1976d2",
     hover,
-    onClick
+    onClick,
+    fontWeight=600,
+    width
     
 
     }){
 
 return(
     <>
-        <ButtonComp  onClick={onClick} hover={hover} backgroundColor={backgroundColor} smFontSize={smFontSize} mdFontSize={mdFontSize} lgFontSize={lgFontSize} label={label} startIcon={startIcon} endIcon={endIcon}height={"auto"}   padding={padding} borderRadius={"0.75rem"} minWidth={0}/>
+        <ButtonComp width={width}  onClick={onClick} fontWeight={fontWeight} hover={hover} backgroundColor={backgroundColor} smFontSize={smFontSize} mdFontSize={mdFontSize} lgFontSize={lgFontSize} label={label} height={"auto"}   padding={padding} borderRadius={"0.3rem"} minWidth={0}/>
     </>
 )
 }

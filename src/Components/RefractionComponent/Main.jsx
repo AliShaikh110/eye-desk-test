@@ -23,8 +23,8 @@ export default function Refraction({ backgroundColor }) {
     const [row1, setRow1] = useState(Array(3).fill(false))
     const [row2, setRow2] = useState(Array(3).fill(false))
     const [row3, setRow3] = useState(Array(3).fill(false))
-    const [row4, setRow4] = useState(Array(4).fill(false))
-    const [row5, setRow5] = useState(Array(4).fill(false))
+    const [row4, setRow4] = useState(Array(3).fill(false))
+    const [row5, setRow5] = useState(Array(3).fill(false))
     const [row6, setRow6] = useState(Array(1).fill(false))
 
     const data1 = [<VisualAcuityV3Merging />, <Intraocular />, <AutoRefractionAr />]
@@ -33,13 +33,31 @@ export default function Refraction({ backgroundColor }) {
     const data4 = [<Retinoscopyy />, <Keratometry />, <Amsler />]
     const data5 = [<ContactLensPrescriptions />, <ColorVision />, <ContrastSensi />]
     const data6 = [ <Orthoptics />]
-    const [displayItem, setDisplayItem] = useState(true)
+    const [displayItem1, setDisplayItem1] = useState(true)
+    const [displayItem2, setDisplayItem2] = useState(true)
+    const [displayItem3, setDisplayItem3] = useState(true)
+    const [displayItem4, setDisplayItem4] = useState(true)
+    const [displayItem5, setDisplayItem5] = useState(true)
+    const [displayItem6, setDisplayItem6] = useState(true)
     // console.log(data1);
 
-    const disItemClicked = () => {
-        console.log(displayItem);
-        setDisplayItem(!displayItem);
-        console.log(displayItem);
+    const disItem1Clicked = (value) => {
+        setDisplayItem1(value);
+    }
+    const disItem2Clicked = (value) => {
+        setDisplayItem2(value);
+    }
+    const disItem3Clicked = (value) => {
+        setDisplayItem3(value);
+    }
+    const disItem4Clicked = (value) => {
+        setDisplayItem4(value);
+    }
+    const disItem5Clicked = (value) => {
+        setDisplayItem5(value);
+    }
+    const disItem6Clicked = (value) => {
+        setDisplayItem6(value);
     }
 
     const displayCompRow1 = (index) => {
@@ -91,8 +109,8 @@ export default function Refraction({ backgroundColor }) {
             margin-left: 1;}
             `}
             </style>
-            <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "row" }}>
-                <Box sx={{ width: "60%" }} >
+            <Box sx={{width:"100%", overflow:"hidden", display: "flex", justifyContent: "center", flexDirection: "row" }}>
+                <Box sx={{ width:{md:"78%", lg:"60%",sm:"96%"}, marginLeft:"1rem" }} >
 
 
 
@@ -105,36 +123,36 @@ export default function Refraction({ backgroundColor }) {
                             <HeaderAuto headLabel={"L/OS"} />
                         </Grid>
                     </Grid> */}
-                    <Grid container  bgcolor={"#f3f1f1"} columnSpacing={2} sx={{ border: "1px solid rgba(105, 105, 105, 0.5)", }} >
+                    <Grid container  bgcolor={"#f3f1f1"} columnSpacing={2} sx={{  border: "1px solid rgba(105, 105, 105, 0.5)", }} >
 
 
                         <Grid container sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", bgcolor: "#e6dced" }}>
                             <Grid item>
-                                <ArrowBtnLayout hover={row1[0] ? "blue" : "green"} backgroundColor={row1[0] ? "#1757C2" : "rgba(2, 184, 1, 1)"} onClick={() => displayCompRow1(0)} label={"VISUAL ACUITY (V3)"} />
+                                <ArrowBtnLayout paddingX={"0.25rem"} hover={row1[0] ? "blue" : "green"}  backgroundColor={row1[0] ? "#1976d2" : "rgba(2, 184, 1, 1)"} onClick={() => displayCompRow1(0)} label={"VISUAL ACUITY (V3)"} />
                             </Grid>
                             <Grid item>
-                                <ArrowBtnLayout label={"INTRAOCULAR PRESSURE (IOP)"} onClick={() => displayCompRow1(1)} hover={row1[1] ? "blue" : "green"} backgroundColor={row1[1] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
+                                <ArrowBtnLayout paddingX={"0.25rem"} label={"INTRAOCULAR PRESSURE (IOP)"} onClick={() => displayCompRow1(1)} hover={row1[1] ? "blue" : "green"} backgroundColor={row1[1] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
                             </Grid>
                             <Grid item>
-                                <ArrowBtnLayout label={"AUTO REFRACTION (ARx)"} onClick={() => displayCompRow1(2)} hover={row1[2] ? "blue" : "green"} backgroundColor={row1[2] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
+                                <ArrowBtnLayout paddingX={"0.25rem"} label={"AUTO REFRACTION (ARx)"} onClick={() => displayCompRow1(2)} hover={row1[2] ? "blue" : "green"} backgroundColor={row1[2] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
                             </Grid>
                             
                         </Grid>
 
                         {/* **********MapElements1******** */}
-                        <Grid container>
+                        <Grid container >
                             {data1.map((key, i) => {
                                 return (
-                                    <Grid key={i} item md={12}>
-                                        <Grid container sx={{paddingX:"0.5rem",  display: row1[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
-                                            <Grid item md={12} display={"flex"} justifyContent={"space-between"}  paddingY={"0.5rem"}>
-                                                <ButtonComp onClick={disItemClicked} label={"Right"} backgroundColor={displayItem ? "#1976d2" : "white"} color={displayItem ? "white" : "black"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
-                                                <ButtonComp onClick={disItemClicked} label={"Left"} backgroundColor={displayItem ? "white" : "#1976d2"} color={displayItem ? "black" : "white"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
+                                    <Grid key={i} item sm={12} md={12}>
+                                        <Grid container sx={{paddingX:"1.1rem",  display: row1[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0", borderLeft:0 }} >
+                                            <Grid item sm={12} md={12} display={"flex"} justifyContent={"start"} flexDirection={"row"}  paddingY={"0.5rem"}>
+                                                <ButtonComp onClick={() => disItem1Clicked(true)} label={"Right"} backgroundColor={displayItem1 ? "#1976d2" : "white"} color={displayItem1 ? "white" : "black"}  hover={{backgroundColor:displayItem1? "blue" : "#f7f7f7"}} height={"2rem"} fontWeight={600} />
+                                                <ButtonComp onClick={() => disItem1Clicked(false)} label={"Left"} backgroundColor={displayItem1 ? "white" : "#1976d2"} color={displayItem1 ? "black" : "white"}  hover={{backgroundColor:displayItem1? "#f7f7f7" : "blue" }} height={"2rem"} fontWeight={600} />
                                             </Grid>
-                                            <Grid item sm={12} md={12} sx={{ display: displayItem ? "flex" : "none", backgroundColor: "#efefff" }}>
+                                            <Grid item sm={12} md={12} sx={{ display: displayItem1 ? "flex" : "none", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
-                                            <Grid key={i} item md={12} sx={{ display: displayItem ? "none" : "flex", backgroundColor: "#efefff" }}>
+                                            <Grid key={i} item sm={12} md={12} sx={{ display: displayItem1 ? "none" : "flex",  paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem",  background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
                                         </Grid>
@@ -144,56 +162,14 @@ export default function Refraction({ backgroundColor }) {
                         </Grid>
                         {/* ********-----------********* */}
 
-                        {/* <Grid item md={12}  >
-                    <Grid container sx={{display: row1[0] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f8f0f0" }}  >
-                                <VisualAcuityV3Merging  />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#efefff" }} >
-                                <VisualAcuityV3Merging />
-                            </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row1[1] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                                <Intraocular />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                                <Intraocular />
-                            </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{ display: row1[2] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                                <AutoRefractionAr />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                                <AutoRefractionAr />
-                            </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row1[3] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                                <DryRefraction />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                                <DryRefraction />
-                            </Grid>
-                    </Grid>
-                </Grid> */}
+                      
 
                         {/* **********Row2*********** */}
                         
 
                         <Grid container sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", border: "1px solid rgba(105, 105, 105, 0.5)", borderTop: 0, paddingY: "0.3rem", bgcolor: "#dad5df" }}>
                             <Grid item>
-                                <ArrowBtnLayout label={"DRY REFRACTION"} onClick={() => displayCompRow2(0)} hover={row2[0] ? "blue" : "green"} backgroundColor={row1[0] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
+                                <ArrowBtnLayout label={"DRY REFRACTION"} onClick={() => displayCompRow2(0)} hover={row2[0] ? "blue" : "green"} backgroundColor={row2[0] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
                             </Grid>
                             <Grid item>
                                 <ArrowBtnLayout hover={row2[1] ? "blue" : "green"} backgroundColor={row2[1] ? "#1757C2" : "rgba(2, 184, 1, 1)"} onClick={() => displayCompRow2(1)} label={"REFRACTION (DILATED)"} />
@@ -208,16 +184,16 @@ export default function Refraction({ backgroundColor }) {
                         <Grid container>
                             {data2.map((key, i) => {
                                 return (
-                                    <Grid key={i} item md={12}>
-                                        <Grid container sx={{paddingX:"0.5rem", display: row2[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
-                                            <Grid item md={12} display={"flex"} justifyContent={"space-between"} paddingY={"0.5rem"}>
-                                                <ButtonComp onClick={disItemClicked} label={"Right"} backgroundColor={displayItem ? "#1976d2" : "white"} color={displayItem ? "white" : "black"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
-                                                <ButtonComp onClick={disItemClicked} label={"Left"} backgroundColor={displayItem ? "white" : "#1976d2"} color={displayItem ? "black" : "white"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
+                                    <Grid key={i} item sm={12} md={12}>
+                                        <Grid container sx={{paddingX:"1.1rem", display: row2[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
+                                            <Grid item md={12} display={"flex"} justifyContent={"start"} flexDirection={"row"} paddingY={"0.5rem"}>
+                                                <ButtonComp onClick={() => disItem2Clicked(true)} label={"Right"} backgroundColor={displayItem2 ? "#1976d2" : "white"} color={displayItem2 ? "white" : "black"}  hover={{backgroundColor:displayItem2? "blue" : "#f7f7f7"}} />
+                                                <ButtonComp onClick={() => disItem2Clicked(false)} label={"Left"} backgroundColor={displayItem2 ? "white" : "#1976d2"} color={displayItem2 ? "black" : "white"}  hover={{backgroundColor:displayItem2? "#f7f7f7" : "#blue"}} />
                                             </Grid>
-                                            <Grid item sm={12} md={12} sx={{ display: displayItem ? "flex" : "none", backgroundColor: "#efefff" }}>
+                                            <Grid item sm={12} md={12} sx={{ display: displayItem2 ? "flex" : "none", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
-                                            <Grid key={i} item md={12} sx={{ display: displayItem ? "none" : "flex", backgroundColor: "#efefff" }}>
+                                            <Grid key={i} item sm={12} md={12} sx={{ display: displayItem2 ? "none" : "flex", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
                                         </Grid>
@@ -227,61 +203,19 @@ export default function Refraction({ backgroundColor }) {
                         </Grid>
                         {/* *************----------------************* */}
 
-                        {/* <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row2[0] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                                <RefractionDilated />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                                <RefractionDilated />
-                            </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row2[1] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                        <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                            <Pgp1 />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                            <Pgp1 />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row2[2] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                                <GlassesPrescriptions />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                                <GlassesPrescriptions />
-                            </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row2[3] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                            <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                                <IntermediateGlassesPrescriptions />
-                            </Grid>
-                            <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                                <IntermediateGlassesPrescriptions />
-                            </Grid>
-                    </Grid>
-                </Grid> */}
+                       
 
                         {/* **********Row3********* */}
 
                         <Grid container sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", border: "1px solid rgba(105, 105, 105, 0.5)", borderTop: 0, bgcolor: "#dad5df" }}>
                             <Grid item>
-                                <ArrowBtnLayout label={"GLASSES PRESCRIPTIONS (Rx)"} onClick={() => displayCompRow3(0)} hover={row3[0] ? "blue" : "green"} backgroundColor={row3[0] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
+                                <ArrowBtnLayout paddingX={0} label={"GLASSES PRESCRIPTIONS (Rx)"} onClick={() => displayCompRow3(0)} hover={row3[0] ? "blue" : "green"} backgroundColor={row3[0] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
+                            </Grid>
+                            <Grid item >
+                                <ArrowBtnLayout paddingX={0} label={"INTERMEDIATE GLASSES PRESCRIPTIONS (Rx)"} onClick={() => displayCompRow3(1)} hover={row3[1] ? "blue" : "green"} backgroundColor={row3[1] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
                             </Grid>
                             <Grid item>
-                                <ArrowBtnLayout label={"INTERMEDIATE GLASSES PRESCRIPTIONS (Rx)"} onClick={() => displayCompRow3(1)} hover={row3[1] ? "blue" : "green"} backgroundColor={row3[1] ? "#1757C2" : "rgba(2, 184, 1, 1)"} />
-                            </Grid>
-                            <Grid item>
-                                <ArrowBtnLayout hover={row3[2] ? "blue" : "green"} backgroundColor={row3[2] ? "#1757C2" : "rgba(2, 184, 1, 1)"} onClick={() => displayCompRow3(2)} label={"PMT"} />
+                                <ArrowBtnLayout paddingX={0} hover={row3[2] ? "blue" : "green"} backgroundColor={row3[2] ? "#1757C2" : "rgba(2, 184, 1, 1)"} onClick={() => displayCompRow3(2)} label={"PMT"} />
                             </Grid>
                             
                         </Grid>
@@ -290,16 +224,16 @@ export default function Refraction({ backgroundColor }) {
                         <Grid container>
                             {data3.map((key, i) => {
                                 return (
-                                    <Grid key={i} item md={12}>
-                                        <Grid container sx={{paddingX:"0.5rem", display: row3[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
-                                            <Grid item md={12} display={"flex"} justifyContent={"space-between"} paddingY={"0.5rem"}>
-                                                <ButtonComp onClick={disItemClicked} label={"Right"} backgroundColor={displayItem ? "#1976d2" : "white"} color={displayItem ? "white" : "black"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
-                                                <ButtonComp onClick={disItemClicked} label={"Left"} backgroundColor={displayItem ? "white" : "#1976d2"} color={displayItem ? "black" : "white"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
+                                    <Grid key={i} item sm={12} md={12}>
+                                        <Grid container sx={{paddingX:"1.1rem", display: row3[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
+                                            <Grid item md={12} display={"flex"} justifyContent={"start"} flexDirection={"row"} paddingY={"0.5rem"}>
+                                                <ButtonComp onClick={() => disItem3Clicked(true)} label={"Right"} backgroundColor={displayItem3 ? "#1976d2" : "white"} color={displayItem3 ? "white" : "black"}  hover={{backgroundColor:displayItem3? "blue" : "#f7f7f7"}} />
+                                                <ButtonComp onClick={() => disItem3Clicked(false)} label={"Left"} backgroundColor={displayItem3 ? "white" : "#1976d2"} color={displayItem3 ? "black" : "white"}  hover={{backgroundColor:displayItem3? "#f7f7f7" : "blue"}} />
                                             </Grid>
-                                            <Grid item sm={12} md={12} sx={{ display: displayItem ? "flex" : "none", backgroundColor: "#efefff" }}>
+                                            <Grid item sm={12} md={12} sx={{ display: displayItem3 ? "flex" : "none", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
-                                            <Grid key={i} item md={12} sx={{ display: displayItem ? "none" : "flex", backgroundColor: "#efefff" }}>
+                                            <Grid key={i} item sm={12} md={12} sx={{ display: displayItem3 ? "none" : "flex", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
                                         </Grid>
@@ -309,49 +243,7 @@ export default function Refraction({ backgroundColor }) {
                         </Grid>
                         {/* **********-------------********** */}
 
-                        {/* <Grid item md={12} >
-                    <Grid container sx={{display: row3[0] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                        <Grid item sm={12} md={6} sx={{  paddingX: "0.5rem", backgroundColor:"#f7f0f0" }}>
-                            <Pmt />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{ paddingX: "0.5rem", backgroundColor:"#efefff" }}>
-                            <Pmt />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row3[1] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}} >
-                            <Retinoscopyy />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <Retinoscopyy />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row3[2] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}}>
-                            <Keratometry />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <Keratometry />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row3[3] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}} >
-                            <Amsler />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <Amsler />
-                        </Grid>
-                    </Grid>
-                </Grid>  */}
+                      
 
                         {/* **********Row4********* */}
 
@@ -372,16 +264,16 @@ export default function Refraction({ backgroundColor }) {
                         <Grid container>
                             {data4.map((key, i) => {
                                 return (
-                                    <Grid key={i} item md={12}>
-                                        <Grid container sx={{paddingX:"0.5rem", display: row4[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
-                                            <Grid item md={12} display={"flex"} justifyContent={"space-between"} paddingY={"0.5rem"}>
-                                                <ButtonComp onClick={disItemClicked} label={"Right"} backgroundColor={displayItem ? "#1976d2" : "white"} color={displayItem ? "white" : "black"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
-                                                <ButtonComp onClick={disItemClicked} label={"Left"} backgroundColor={displayItem ? "white" : "#1976d2"} color={displayItem ? "black" : "white"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
+                                    <Grid key={i} item sm={12} md={12}>
+                                        <Grid container sx={{paddingX:"1.1rem", display: row4[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
+                                            <Grid item md={12} display={"flex"} justifyContent={"start"} flexDirection={"row"} paddingY={"0.5rem"}>
+                                                <ButtonComp onClick={() => disItem4Clicked(true)} label={"Right"} backgroundColor={displayItem4 ? "#1976d2" : "white"} color={displayItem4 ? "white" : "black"}  hover={{backgroundColor:displayItem4? "blue" : "#f7f7f7"}} />
+                                                <ButtonComp onClick={() => disItem4Clicked(false)} label={"Left"} backgroundColor={displayItem4 ? "white" : "#1976d2"} color={displayItem4 ? "black" : "white"}  hover={{backgroundColor:displayItem4? "#f7f7f7" : "blue"}} />
                                             </Grid>
-                                            <Grid item sm={12} md={12} sx={{ display: displayItem ? "flex" : "none", backgroundColor: "#efefff" }}>
+                                            <Grid item sm={12} md={12} sx={{ display: displayItem4 ? "flex" : "none", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
-                                            <Grid key={i} item md={12} sx={{ display: displayItem ? "none" : "flex", backgroundColor: "#efefff" }}>
+                                            <Grid  key={i} item sm={12} md={12} sx={{ display: displayItem4 ? "none" : "flex", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
                                         </Grid>
@@ -412,16 +304,16 @@ export default function Refraction({ backgroundColor }) {
                         <Grid container>
                             {data5.map((key, i) => {
                                 return (
-                                    <Grid key={i} item md={12}>
-                                        <Grid container sx={{paddingX:"0.5rem", display: row5[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
-                                            <Grid item md={12} display={"flex"} justifyContent={"space-between"}  paddingY={"0.5rem"}>
-                                                <ButtonComp onClick={disItemClicked} label={"Right"} backgroundColor={displayItem ? "#1976d2" : "white"} color={displayItem ? "white" : "black"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
-                                                <ButtonComp onClick={disItemClicked} label={"Left"} backgroundColor={displayItem ? "white" : "#1976d2"} color={displayItem ? "black" : "white"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
+                                    <Grid key={i} item sm={12} md={12}>
+                                        <Grid container sx={{paddingX:"1.1rem", display: row5[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
+                                            <Grid item md={12} display={"flex"} justifyContent={"start"} flexDirection={"row"}  paddingY={"0.5rem"}>
+                                                <ButtonComp onClick={() => disItem5Clicked(true)} label={"Right"} backgroundColor={displayItem5 ? "#1976d2" : "white"} color={displayItem5 ? "white" : "black"}  hover={{backgroundColor:displayItem5? "blue" : "#f7f7f7"}} />
+                                                <ButtonComp onClick={() => disItem5Clicked(false)} label={"Left"} backgroundColor={displayItem5 ? "white" : "#1976d2"} color={displayItem5 ? "black" : "white"}  hover={{backgroundColor:displayItem5? "#f7f7f7" : "blue"}} />
                                             </Grid>
-                                            <Grid item sm={12} md={12} sx={{ display: displayItem ? "flex" : "none", backgroundColor: "#efefff" }}>
+                                            <Grid item sm={12} md={12} sx={{ display: displayItem5 ? "flex" : "none", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
-                                            <Grid key={i} item md={12} sx={{ display: displayItem ? "none" : "flex", backgroundColor: "#efefff" }}>
+                                            <Grid key={i} item sm={12} md={12} sx={{ display: displayItem5 ? "none" : "flex", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
                                         </Grid>
@@ -442,16 +334,17 @@ export default function Refraction({ backgroundColor }) {
                         <Grid container>
                             {data6.map((key, i) => {
                                 return (
-                                    <Grid key={i} item md={12}>
-                                        <Grid container sx={{paddingX:"0.5rem", display: row6[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
-                                            <Grid item md={12} display={"flex"} justifyContent={"space-between"}  paddingY={"0.5rem"}>
-                                                <ButtonComp onClick={disItemClicked} label={"Right"} backgroundColor={displayItem ? "#1976d2" : "white"} color={displayItem ? "white" : "black"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
-                                                <ButtonComp onClick={disItemClicked} label={"Left"} backgroundColor={displayItem ? "white" : "#1976d2"} color={displayItem ? "black" : "white"} minWidth={0} height={"1.7rem"} padding={"0rem 1.1rem"} borderRadius={"0.3rem"} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} />
+                                    <Grid key={i} item sm={12} md={12}>
+                                        <Grid container sx={{paddingX:"1.1rem", display: row6[i] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop: "0" }} >
+                                            <Grid item md={12} display={"flex"} justifyContent={"start"} flexDirection={"row"}  paddingY={"0.5rem"}>
+                                                <ButtonComp onClick={() => disItem6Clicked(true)} label={"Right"} backgroundColor={displayItem6 ? "#1976d2" : "white"} color={displayItem6 ? "white" : "black"}  hover={{backgroundColor:displayItem6? "blue" : "#f7f7f7"}} />
+
+                                                <ButtonComp onClick={() => disItem6Clicked(false)} label={"Left"} backgroundColor={displayItem6 ? "white" : "#1976d2"} color={displayItem6 ? "black" : "white"}  hover={{backgroundColor:displayItem6? "#f7f7f7" : "blue"}} />
                                             </Grid>
-                                            <Grid item sm={12} md={12} sx={{ display: displayItem ? "flex" : "none", backgroundColor: "#efefff" }}>
+                                            <Grid item sm={12} md={12} sx={{ display: displayItem6 ? "flex" : "none", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
-                                            <Grid key={i} item md={12} sx={{ display: displayItem ? "none" : "flex", backgroundColor: "#efefff" }}>
+                                            <Grid key={i} item sm={12} md={12} sx={{ display: displayItem6 ? "none" : "flex", paddingX:"1rem", marginBottom:"1rem", borderRadius:"0.5rem", background: ` linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(234,229,238,1) 48%, rgba(246,246,246,1) 100%)` }}>
                                                 {key}
                                             </Grid>
                                         </Grid>
@@ -462,49 +355,7 @@ export default function Refraction({ backgroundColor }) {
 
                         
 
-                        {/* <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row4[0] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                    <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}} >
-                            <ContactLensPrescriptions />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <ContactLensPrescriptions />
-                        </Grid>
-                    </Grid>
-                </Grid> 
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row4[1] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                    <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}} >
-                            <ColorVision />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <ColorVision />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row4[2] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                    <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}} >
-                            <ContrastSensi />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <ContrastSensi />
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item sm={12} md={12} >
-                    <Grid container sx={{display: row4[3] ? "flex" : "none", border: "1px solid rgba(105, 105, 105, 0.5)", borderRight: "0", borderTop:"0" }} >
-                    <Grid item sm={12} md={6} sx={{backgroundColor:"#f7f0f0"}} >
-                            <Orthoptics />
-                        </Grid>
-                        <Grid item sm={12} md={6} sx={{backgroundColor:"#efefff"}}>
-                            <Orthoptics />
-                        </Grid>
-                    </Grid>
-                </Grid> */}
+                      
 
                     </Grid>
 

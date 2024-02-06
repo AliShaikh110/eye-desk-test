@@ -15,7 +15,7 @@ export function LabelCommentLayout({size,
     return (
         <Grid container>
             <Grid item sm={smLabel}  md={mdLabel}  display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={justifyContent}>
-                <Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.9rem"}}}>
+                <Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.84rem"}, fontWeight:"550"}}>
                     {label}
                 </Typography>
             </Grid>

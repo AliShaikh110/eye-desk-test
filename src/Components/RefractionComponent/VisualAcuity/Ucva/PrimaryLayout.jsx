@@ -9,14 +9,14 @@ export function FirstUcvaLayout() {
     return (
         <>
             <Grid container rowSpacing={"2rem"}>
-                <Grid item sm={1.5} md={1.5}><Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.9rem"}}} >UCVA</Typography></Grid>
+                <Grid item sm={1.5} md={1.5}><Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.84rem"}, fontWeight:"550"}} >UCVA</Typography></Grid>
                 <Grid item sm={9} md={9}>
 
                     <UcvaFirstMaping />
                 </Grid>
                 <Grid item sm={1.5} md={1.5}>
                     <Stack flexDirection={"row"} justifyContent={"end"}>
-                        <ButtonComp smFontSize={"0.75rem"} mdFontSize={"0.78rem"} lgFontSize={"0.85rem"} backgroundColor={"white"} minWidth={"10px"} label={"P"} color={"black"} />
+                        <ButtonComp hover={{color: "white", fontWeight:"600"}} smFontSize={"0.75rem"} mdFontSize={"0.78rem"} lgFontSize={"0.85rem"} backgroundColor={"white"} minWidth={"10px"} label={"P"} color={"black"} />
                     </Stack>
                 </Grid>
             </Grid>
@@ -34,7 +34,7 @@ export function SecondUcvaLayout() {
             </Grid>
             <Grid item sm={1.5} md={1.5}>
                 <Stack flexDirection={"row"} justifyContent={"end"}>
-                    <ButtonComp smFontSize={"0.75rem"} mdFontSize={"0.78rem"} lgFontSize={"0.85rem"} backgroundColor={"white"} minWidth={"10px"} label={"P"} color={"black"} />
+                    <ButtonComp hover={{color: "white", fontWeight:"600"}} smFontSize={"0.75rem"} mdFontSize={"0.78rem"} lgFontSize={"0.85rem"} backgroundColor={"white"} minWidth={"10px"} label={"P"} color={"black"} />
                 </Stack>
             </Grid>
         </Grid>
@@ -54,7 +54,7 @@ export function SelectLabelAfterUcva() {
             <Grid item sm={9} md={9}>
                 <Grid container columnSpacing={1.5}>
                     <Grid item sm={1} md={1} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row" }}>
-                        <Typography sx={{fontSize:{md:"0.78rem", lg:"0.85rem"}}} >PR:</Typography>
+                        <Typography sx={{fontSize:{sm:"0.82rem", md:"0.78rem", lg:"0.84rem"}, fontWeight:550}} >PR:</Typography>
                     </Grid>
                     <Grid item sm={2.75} md={2.75}>
                         <LabelSelectRefraction label={"S"} smSelect={9} smTypo={3} labelSpace={""} />

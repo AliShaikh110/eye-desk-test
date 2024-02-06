@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-
 export function ButtonComp({
     label,
     width,
@@ -13,9 +12,9 @@ export function ButtonComp({
     padding,
     minWidth,
     margin,
-    mdFontSize = "0.75rem",
+    mdFontSize,
     lgFontSize,
-    smFontSize = "0.75rem",
+    smFontSize,
     backgroundColor,
     startIcon,
     endIcon,
@@ -37,7 +36,7 @@ return(
             color:{color},
             padding:{padding},
             margin:{margin},
-            "&:hover":{backgroundColor:hover, fontWeight:600},
+            "&:hover":{backgroundColor:hover},
         
         }}  variant="contained" onClick={onClick} >{label}</Button>
     </>
@@ -45,7 +44,3 @@ return(
 }
 
 export default ButtonComp;
-
-
-
-

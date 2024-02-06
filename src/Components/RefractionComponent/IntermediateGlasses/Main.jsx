@@ -19,7 +19,7 @@ export function IntermediateGlassesPrescriptions() {
                     <Grid container >
                         <Grid item sm={1.5} md={1.5}>
                         <Box className="myBtn">
-                            <ArrowBtn label={"Fill"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
+                            <ArrowBtn label={"Fill"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"}  />
                         </Box>
                         </Grid>
 
@@ -32,7 +32,7 @@ export function IntermediateGlassesPrescriptions() {
                     <LabelSelectRefraction labelSpace={""} smTypo={3} smSelect={8} mdTypo={3} label={"Type of Lens"} mdSelect={8} justifyContent={"start"} />
                 </Grid>
                 <Grid item sm={1} md={1} display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"center"}>
-                    <Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.9rem"}}}>IPD</Typography>
+                    <Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.84rem"}, fontWeight:"550"}}>IPD</Typography>
                 </Grid>
                 <Grid item sm={4.94} md={4.94}>
                     <InpLabHistory sideLabel={"mm"} />

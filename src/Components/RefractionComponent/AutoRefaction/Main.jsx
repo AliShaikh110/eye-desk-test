@@ -17,7 +17,7 @@ export function AutoRefractionAr() {
                     <Grid container>
                         <Grid item sm={1.5} md={1.5}>
                             <Box sx={{ width: "100%" }} className="myBtn">
-                                <ArrowBtn hover label={"Fill"} padding={"0.05rem 0.3rem"} mdFontSize={"0.7rem"} endIcon={<ForwardIcon style={{ fontSize: "large" }} />} />
+                                <ArrowBtn hover label={"Fill"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"}  />
                             </Box>
                         </Grid>
                         <Grid item sm={10.5} md={10.5}>
