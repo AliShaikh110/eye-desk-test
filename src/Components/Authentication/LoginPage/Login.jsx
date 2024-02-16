@@ -96,7 +96,7 @@ const Login = () => {
             sx={{marginTop:{sm:"4rem", md:"3.8rem", lg:"5.5rem"}}}
             marginBottom={"0.25rem"}
           >
-            <Link to="/Signup">
+            <Link to="/Refraction">
               <Button
                 variant="contained"
                 sx={{

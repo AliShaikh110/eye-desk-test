@@ -2,7 +2,10 @@ import { Grid, Stack } from "@mui/material";
 import React from "react";
 import TextFieldInp from "./TextFieldInp";
 
-function InpLabHistory({label, sideLabel}) {
+function InpLabHistory({
+    label,
+    sideLabel,
+}) {
 
     return(
 
@@ -21,7 +24,8 @@ function InpLabHistory({label, sideLabel}) {
                 border:"1px solid gray",
                 borderRadius:"0.2rem",
                 borderColor:"rgb(118, 118, 118)",
-                color:"rgba(105, 105, 105, 0.55)"
+                color:"rgba(105, 105, 105, 0.55)",
+                fontSize:{sm: "0.85rem",md:"0.8rem", lg : "0.8rem"}
                 }}>
                 {sideLabel}
                 </Stack>

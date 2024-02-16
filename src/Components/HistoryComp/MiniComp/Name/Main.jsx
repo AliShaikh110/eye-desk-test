@@ -1,4 +1,5 @@
-import { Grid, Typography } from '@mui/material'
+import  Grid  from '@mui/material/Grid'
+import  Typography  from '@mui/material/Typography'
 import React from 'react'
 import TextFieldInp from '../HelpingComp/TextFieldInp'
 import { SelectInp } from '../HelpingComp/SelectInp'
@@ -15,7 +16,7 @@ function Name() {
                         <Typography height={"100%"} fontSize={"0.9rem"} justifyContent={"center"} flexDirection={"column"} display={"flex"} >Discharge</Typography>
                     </Grid>
                     <Grid item md={2.7} sm={6}>
-                        <SelectInp fontSize={"0.9rem"} bgcolor={"white"} labelSpace={"Side"} selectInpLabel={"Side"} />
+                        <SelectInp fontSize={"0.4rem"} bgcolor={"white"} labelSpace={"Side"} selectInpLabel={"Side"} />
                     </Grid>
                     <Grid item md={2.7} sm={6}>
                         <SelectInp fontSize={"0.9rem"} bgcolor={"white"} labelSpace={"Duration"} selectInpLabel={"Duration"} />

@@ -4,7 +4,8 @@ import ButtonComp from "../../../../HistoryComp/MiniComp/HelpingComp/BasicComp";
 
 function NavigationBar({
     label,
-    fontSize
+    fontSize,
+    onClick
 }) {
 
     return (
@@ -26,7 +27,7 @@ function NavigationBar({
 
             }}
             >
-                <ButtonComp hover={{color : "white", fontWeight:"550"}} backgroundColor={"white"} smFontSize={"0.7rem"} mdFontSize={"0.7rem"} lgFontSize={"0.75rem"} color={"black"} fontSize={fontSize} label={label} width={"100%"} />
+                <ButtonComp onClick={onClick} hover={{color : "white", fontWeight:"550"}} backgroundColor={"white"} smFontSize={"0.7rem"} mdFontSize={"0.7rem"} lgFontSize={"0.75rem"} color={"black"} fontSize={fontSize} label={label} width={"100%"} />
             </Box>
         </>
     )

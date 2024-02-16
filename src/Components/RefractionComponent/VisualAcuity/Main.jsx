@@ -1,40 +1,21 @@
-import { Grid } from "@mui/material";
-import React, { useState } from "react";
-import ArrowBtn from "../HelpRefComp/ArrowBtn";
-import { FirstUcvaLayout, SecondUcvaLayout, SelectLabelAfterUcva } from "./Ucva/PrimaryLayout";
-import { PinholeLayout } from "./Pinhole/PrimaryLayout";
-import { GlassesLayout } from "./Glasses/PrimaryLayout";
-import { ContactLensLayout } from "./ContactLens/PrimaryLayout";
+import Grid from "@mui/material/Grid";
+import React from "react";
+import { ContactLensLayout, FirstUcvaLayout, GlassesLayout, PinholeLayout, SecondUcvaLayout, SelectLabelAfterUcva } from "./Primary/Primary";
+// import { FirstUcvaLayout, SecondUcvaLayout, SelectLabelAfterUcva } from "./Ucva/PrimaryLayout";
+// import { PinholeLayout } from "./Pinhole/PrimaryLayout";
+// import { GlassesLayout } from "./Glasses/PrimaryLayout";
+// import { ContactLensLayout } from "./ContactLens/PrimaryLayout";
 import { LabelCommentLayout } from "../HelpRefComp/LabelCommentLayout";
-import HeaderAuto from "../HelpRefComp/HeaderAuto";
-// import ForwardIcon from '@mui/icons-material/Forward';
+import ArrowBtnLayout from "../HelpRefComp/ArrowBtnLayout";
 
-export function VisualAcuityV3Merging({
-    headLabel
-}) 
-{
-    // sx={{display: displayRef ? "flex" : "none"}} 
-    // const [displayRef, setDisplayRef] = useState(false)
-    // const displayRefComp = () => {
-        // setDisplayRef(!displayRef)
-        // console.log(displayRef);
-    // }
+export function VisualAcuityV3Merging() {
     return (
         <>
-            {/* <Grid container>
-                <Grid item sm={12} md={12}>
-                    <HeaderAuto headLabel={headLabel} />
-                </Grid>
-            </Grid> */}
+            <Grid container rowSpacing={"1.5rem"} columnSpacing={"0.5rem"} paddingTop={"0.1rem"} paddingBottom={"2.5rem"} >
+                {/* <Grid item md={12}>
+                    <ArrowBtnLayout label={"VISUAL ACUITY (V3)"} />
+                </Grid> */}
 
-            {/* <Grid container>
-                <Grid item sm={12} md={12} >
-                    <ArrowBtn onClick={displayRefComp}  hover={"green"}  mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"VISUAL ACUITY (V3)"} backgroundColor={"rgba(2, 184, 1, 1)"} endIcon={<ForwardIcon fontSize="large" />} />
-                </Grid>
-            </Grid> */}
-
-            <Grid container  rowSpacing={"1.5rem"} columnSpacing={"0.5rem"} paddingTop={"0.6rem"} paddingBottom={"2.5rem"} >
-                
                 <Grid item sm={12} md={12}>
                     <FirstUcvaLayout />
                 </Grid>

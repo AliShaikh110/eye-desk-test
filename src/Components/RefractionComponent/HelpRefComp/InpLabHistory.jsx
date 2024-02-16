@@ -1,7 +1,7 @@
 import React from "react";
-
-import { Grid, Stack } from "@mui/material";
-import { TextFieldInp } from "./MiniComponentRef";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import TextFieldInp from "./MiniComponentRef";
 
 function InpLabHistory({label, sideLabel}) {
 
@@ -9,10 +9,11 @@ function InpLabHistory({label, sideLabel}) {
 
         <Grid container>
             <Grid item sm={9.5} md={8.8} lg={9.5}>
-                <TextFieldInp sx={{fontSize:{md:"0.78rem", lg:"0.9rem"}}} label={label} backgroundColor={"white"} />
+                <TextFieldInp sx={{fontSize:{md:"0.77rem", lg:"0.77rem"}}} label={label} backgroundColor={"white"} />
             </Grid>
             <Grid sm={2.5} item md={3.2} lg={2.5}>
-                <Stack sx={{ width: "100%", 
+                <Stack sx={{ width: "100%",
+                fontSize:"0.77rem",
                 flexDirection: "row", 
                 justifyContent: "center", 
                 alignItems: "center", 

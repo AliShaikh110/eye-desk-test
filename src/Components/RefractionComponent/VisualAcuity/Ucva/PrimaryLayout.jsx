@@ -1,4 +1,6 @@
-import { Grid, Stack, Typography } from "@mui/material"
+import Grid from "@mui/material/Grid"
+import Stack from "@mui/material/Stack"
+import Typography from "@mui/material/Typography"
 import React from "react"
 import { UcvaFirstMaping, UcvaSecondMaping } from "../Mapping"
 import ButtonComp from "../../HelpRefComp/HelpRefComp"
@@ -9,7 +11,7 @@ export function FirstUcvaLayout() {
     return (
         <>
             <Grid container rowSpacing={"2rem"}>
-                <Grid item sm={1.5} md={1.5}><Typography sx={{fontSize:{sm:"0.8rem", md:"0.78rem", lg:"0.84rem"}, fontWeight:"550"}} >UCVA</Typography></Grid>
+                <Grid item sm={1.5} md={1.5}><Typography sx={{fontSize:{sm:"0.8rem", md:"0.77rem", lg:"0.77rem"}, fontWeight:600}} >UCVA</Typography></Grid>
                 <Grid item sm={9} md={9}>
 
                     <UcvaFirstMaping />

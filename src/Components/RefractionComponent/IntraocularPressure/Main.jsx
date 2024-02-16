@@ -1,21 +1,23 @@
-import { Box, Grid, TextField, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import React from "react";
-import ArrowBtn from "../HelpRefComp/ArrowBtn";
-import { FourColInpTable } from "../InpTable/FourColInpTable";
-import ForwardIcon from '@mui/icons-material/Forward';
 import ColorSlider from "../HelpRefComp/RangeSlider";
 import { LabelCommentLayout } from "../HelpRefComp/LabelCommentLayout";
 import { TextFieldRefraction } from "../HelpRefComp/MiniComponentRef";
-import BasicTimePicker, { TimePicker, TimerPick } from "../HelpRefComp/TimePicker";
+import { TimerPick } from "../HelpRefComp/TimePicker";
+import ArrowBtnLayout from "../HelpRefComp/ArrowBtnLayout";
 
 export function Intraocular() {
     return (
         <>
 
-            <Grid container rowSpacing={"1.5rem"} columnSpacing={"0.5rem"} paddingTop={"0.6rem"} paddingBottom={"2.5rem"}>
+            <Grid container rowSpacing={"1.5rem"} paddingTop={"0.1rem"} paddingBottom={"2.5rem"}>
                 {/* <Grid item sm={12} md={12} >
                     <ArrowBtn hover={"green"} backgroundColor={"rgba(2, 184, 1, 1)"} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"AUTO REFRACTION (ARx)"} endIcon={<ForwardIcon />} />
                 </Grid> */}
+                <Grid item md={12}>
+                    <ArrowBtnLayout label={"INTRAOCULAR PRESSURE (IOP)"} />
+                </Grid>
 
                 <Grid item sm={12} md={12} >
                     <Grid container  >
@@ -32,7 +34,7 @@ export function Intraocular() {
                                 <Grid item sm={6} md={6}>
 
                                     <Grid container columnSpacing={0.5}>
-                                        <Grid item  sm={9} md={9}>
+                                        <Grid item sm={9} md={9}>
                                             <TextFieldRefraction size={"small"} width={"100%"} backgroundColor={"white"} />
                                         </Grid>
                                         <Grid item sm={3} md={3} display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"start"}>

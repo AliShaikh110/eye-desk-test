@@ -1,17 +1,15 @@
-import { Grid } from "@mui/material";
-import React, {useState} from "react";
+import Grid from "@mui/material/Grid";
+import React, { useState } from "react";
 import ButtonComp from "../HelpRefComp/HelpRefComp";
 
 
 export function UcvaFirstMaping() {
     const [value, setValue] = useState('');
-    const [plus, setPlus] = useState("");
 
     const ucva = ["PL-", "PL+", "FL", "HM", "CFCF", "FC", "1/60", "2/60", "3/60", "4/60", "5/60", "6/60", "6/36", "6/24", "6/18", "6/12", "6/9", "6/7.5", "6/6", "6/5"];
     
     const onSet = (params) => {
         setValue(params);
-        console.log((params));
     }
     
     return (

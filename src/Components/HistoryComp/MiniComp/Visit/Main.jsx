@@ -1,4 +1,6 @@
-import { Grid, Stack, Typography } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
 import React from 'react'
 import HistoryBtn from '../HelpingComp/HistoryBtn'
 import TextFieldInp from '../HelpingComp/TextFieldInp'

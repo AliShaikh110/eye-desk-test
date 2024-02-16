@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import React from "react";
 
 
@@ -7,7 +7,7 @@ export function ButtonComp({
     width,
     borderRadius,
     fontWeight,
-    color,
+    color ,
     onClick,
     height = "100%",
     padding,

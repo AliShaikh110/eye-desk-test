@@ -3,7 +3,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { TextField } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 export default function SelectAutoWidth({
   selectInpLabel,
@@ -54,8 +54,7 @@ export default function SelectAutoWidth({
 
 export function TextFieldInp({
     label,
-    width = "100%",
-    backgroundColor,
+    // width = "100%",
     disabled=false,
     fontSize,
     size="small",
@@ -66,11 +65,11 @@ export function TextFieldInp({
 return(
     <>
         <TextField fullWidth 
-        InputLabelProps={{sx:{fontSize:{md : mdFontSize, lg: lgFontSize}  }}}
+        InputLabelProps={{sx:{fontSize:{md : "0.75rem", lg: "0.75rem"}  }}}
          id="outlined-basic" size={size} label={label} variant="outlined" disabled={disabled}
-            sx={{width:{width},
+            sx={{width:"100%",
             fontSize:{fontSize},
-            color:"rgba(105, 105, 105, 0.55)",backgroundColor:{backgroundColor}}}
+            color:"rgba(105, 105, 105, 0.55)",backgroundColor:"white"}}
         />
     </>
 )

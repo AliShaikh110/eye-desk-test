@@ -11,6 +11,8 @@ import Payments from "./Components/PaymentGateway/Payments";
 import { AppProvider } from "./AppContext/AppContext";
 import Refraction from "./Components/RefractionComponent/Main";
 import EyeTemplate from "./Components/EyeTemplate/Main/Main";
+import HistoryComp from "./Components/HistoryComp/Main/HistoryComp";
+import RefractionMain from "./Components/RefractionComponent/Main/Main";
 
 function App() {
   return (
@@ -20,13 +22,14 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Dashboard" element={<Home />} />
-          <Route path="/Refraction" element={<Refraction />} />
+          <Route path="/Refraction" element={<RefractionMain />} />
           <Route path="/EyeTemplate" element={<EyeTemplate />} />
           <Route path="/OT" element={<OT />} />
           <Route path="/IPD" element={<IPD />} />
           <Route path="/OPD" element={<OPD />} />
           <Route path="/STORE" element={<STORE />} />
           <Route path="/Payment" element={<Payments />} />
+          <Route path="/history" element={<HistoryComp/>} />
         </Routes>
       </AppProvider>
     </div>

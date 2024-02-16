@@ -1,4 +1,5 @@
-import { Grid, Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 import React from "react";
 import { TextFieldInp } from "../HelpRefComp/MiniComponentRef";
 

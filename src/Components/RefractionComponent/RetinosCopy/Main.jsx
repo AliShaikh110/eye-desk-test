@@ -1,14 +1,16 @@
-import { Box, Grid, TextField, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import React from "react";
-import ArrowBtn from "../HelpRefComp/ArrowBtn";
 import AddTwoToneIcon from "@mui/icons-material/AddTwoTone";
 import { LabelCommentLayout } from "../HelpRefComp/LabelCommentLayout";
-import ForwardIcon from '@mui/icons-material/Forward';
+import ArrowBtnLayout from "../HelpRefComp/ArrowBtnLayout";
 
 function Retinoscopyy() {
   return (
     <>
-      <Box paddingTop={"0.6rem"} paddingBottom={"2.5rem"}>
+      <Box paddingTop={"0.1rem"} paddingBottom={"2.5rem"}>
 
       
       <Box
@@ -19,9 +21,10 @@ function Retinoscopyy() {
 
         <Box width={"100%"}>
           <Grid container>
-            {/* <Grid item sm={12} md={12} >
-              <ArrowBtn hover={"green"} backgroundColor={"rgba(2, 184, 1, 1)"} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"CONTRAST SENSITIVITY"} endIcon={<ForwardIcon />} />
-            </Grid> */}
+            <Grid item sm={12} md={12} >
+              {/* <ArrowBtn hover={"green"} backgroundColor={"rgba(2, 184, 1, 1)"} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"CONTRAST SENSITIVITY"} endIcon={<ForwardIcon />} /> */}
+              <ArrowBtnLayout label={"RETINOSCOPY (R)"} />
+            </Grid>
           </Grid>
           <Grid container marginTop={"1rem"}>
             <Grid item sm={1.5} md={1.5}></Grid>

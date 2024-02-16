@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import React, {useState} from "react";
 import ButtonComp from "../HelpRefComp/HelpRefComp";
 

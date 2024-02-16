@@ -8,16 +8,16 @@ function Error() {
     <>
         {/* ********Error md and Above******* */}
 
-        <Box marginY={"1.2rem"} display={{ sm: "none", md: "block" }} paddingX={"0.6rem"}>
+        <Box marginY={"1.2rem"} display={{ sm: "none", md: "block" }} paddingX={"1rem"}>
                     <Stack flexDirection={"row"} >
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Glasses/lens adviced"} />
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Investigation"} />
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Diagnosis"} />
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Medications"} />
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Procedure(s)"} />
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Follow-up"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Glasses/lens adviced"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Investigation"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Diagnosis"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Medications"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Procedure(s)"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Follow-up"} />
                         <Box sx={{ borderRight: "0.13rem solid", borderColor: "rgba(217, 217, 217, 1)", marginRight: "1rem" }}></Box>
-                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.82rem"} label={"Not Filled"} />
+                        <ErrorComp mdFontSize={"0.75rem"} lgFontSize={"0.88rem"} label={"Not Filled"} />
                         <Stack flexDirection={"row"} justifyContent={"center"} alignItems={"center"} paddingRight={"0.7rem"}>
                             <img src={tick} />
                             <Typography sx={{ color: "rgba(2, 184, 1, 1)", fontSize: "0.8rem", paddingX: "0.1rem" }}>Filled</Typography>

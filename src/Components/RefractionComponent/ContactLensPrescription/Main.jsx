@@ -1,20 +1,20 @@
-import { Grid } from "@mui/material";
+import Grid  from "@mui/material/Grid";
 import React from "react";
-import ArrowBtn from "../HelpRefComp/ArrowBtn";
 import { SixColInpTable } from "../InpTable/SixColInpTable";
 import { LabelCommentLayout } from "../HelpRefComp/LabelCommentLayout";
-import ForwardIcon from '@mui/icons-material/Forward';
+import ArrowBtnLayout from "../HelpRefComp/ArrowBtnLayout";
 
 export function ContactLensPrescriptions() {
     return (
         <>
-            <Grid container rowSpacing={"1.5rem"} columnSpacing={"0.5rem"} paddingTop={"0.6rem"} paddingBottom={"2.5rem"} paddingX={"0.5rem"}>
-                {/* <Grid item sm={12} md={12} >
-                    <ArrowBtn hover={"green"} backgroundColor={"rgba(2, 184, 1, 1)"} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"CONTACT LENS PRESCRIPTIONS (CL)"} endIcon={<ForwardIcon />} />
-                </Grid> */}
+            <Grid container rowSpacing={"1.5rem"} paddingTop={"0.1rem"} paddingBottom={"2.5rem"} >
+                <Grid item sm={12} md={12} >
+                    {/* <ArrowBtn hover={"green"} backgroundColor={"rgba(2, 184, 1, 1)"} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"CONTACT LENS PRESCRIPTIONS (CL)"} endIcon={<ForwardIcon />} /> */}
+                    <ArrowBtnLayout label={"CONTACT LENS PRESCRIPTIONS (CL)"} />
+                </Grid>
 
                 <Grid item sm={12} md={12}>
-                    <Grid container rowSpacing={"1.5rem"} columnSpacing={"0.5rem"} >
+                    <Grid container rowSpacing={"1.5rem"} >
                         <Grid item sm={1.5} md={1.5}>
 
                         </Grid>

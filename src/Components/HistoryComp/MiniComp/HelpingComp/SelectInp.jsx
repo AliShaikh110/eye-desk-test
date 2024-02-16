@@ -7,12 +7,11 @@ import Select from '@mui/material/Select';
 
 export function SelectInp({
   selectInpLabel,
-  height,
-  paddingTop,
   labelSpace="Select",
   bgcolor,
-  mdFontSize,
-  lgFontSize,
+  smFontSize="0.9rem",
+  mdFontSize="0.85rem",
+  lgFontSize="0.95rem",
   width
 }) {
   const [age, setAge] = React.useState('');
@@ -24,7 +23,7 @@ export function SelectInp({
   return (
     <div>
       <FormControl sx={{ minWidth: "100%" }} size='small'>
-        <InputLabel  style={{fontSize:{sm:"0.9rem", md:"0.85rem"},}}  sx={{width:"100%",fontSize:{md:mdFontSize, lg:lgFontSize}}}size='small' id="demo-multiple-name-label" >{selectInpLabel}</InputLabel>
+        <InputLabel  style={{fontSize:{sm:"0.9rem", md:"0.85rem"},}}  sx={{width:"100%",fontSize:{sm:smFontSize, md:mdFontSize, lg:lgFontSize}, marginTop:"0.1rem"}}size='small' id="demo-multiple-name-label" >{selectInpLabel}</InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
@@ -33,10 +32,7 @@ export function SelectInp({
           autoWidth
           label={labelSpace}
           size='small' 
-          sx={{bgcolor:bgcolor,minWidth:"0px", width:{width},height:"2.5rem"}}
-          
-          
-          
+          sx={{bgcolor:bgcolor,minWidth:"0px", width:{width},height:"2.5rem", fontSize:{md:"0.85rem", lg: "0.9rem"}}}
         >
           <MenuItem value="">
             <em>None</em>

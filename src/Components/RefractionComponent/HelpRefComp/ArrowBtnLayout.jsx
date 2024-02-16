@@ -1,6 +1,6 @@
-import { Button, Grid } from '@mui/material'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
 import React from 'react'
-import ArrowBtn from './ArrowBtn'
 
 
 function ArrowBtnLayout({
@@ -13,7 +13,7 @@ function ArrowBtnLayout({
     return (
         <Grid container>
             <Grid item sm={12} md={12} sx={{display:{
-                sm:"flex", md:"flex"}}} paddingX={"0.5rem"} paddingY={"0.5rem"}>
+                sm:"flex", md:"flex"}}}  paddingY={"0.5rem"}>
                 {/* <ArrowBtn fontWeight={600} padding={"0.25rem 0.95rem"}  onClick={onClick} hover={hover} smFontSize={"0.75rem"} mdFontSize={"0.75rem"} lgFontSize={"0.75rem"} label={label} backgroundColor={backgroundColor}  /> */}
 
                 <Button onClick={onClick} sx={{

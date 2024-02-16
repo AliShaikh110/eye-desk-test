@@ -1,28 +1,29 @@
-import { Box, Grid } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import React from "react";
 import ArrowBtn from "../HelpRefComp/ArrowBtn";
 import { FiveColInpTable } from "../InpTable/FiveColInpTable";
 import { LabelCommentLayout } from "../HelpRefComp/LabelCommentLayout";
 import { LabelSelectRefraction } from "../HelpRefComp/LabelSelectRef";
-import ForwardIcon from '@mui/icons-material/Forward';
+import ArrowBtnLayout from "../HelpRefComp/ArrowBtnLayout";
 
 export function RefractionDilated() {
     return (
         <>
-            <Grid container rowSpacing={"1.5rem"} columnSpacing={"0.5rem"} paddingTop={"0.6rem"} paddingBottom={"1rem"}>
-                {/* <Grid item sm={12} md={12} >
-                    <ArrowBtn hover={"green"} backgroundColor={"rgba(2, 184, 1, 1)"} mdFontSize={"0.85rem"} lgFontSize={"0.9rem"} label={"REFRACTION (DILATED)"} endIcon={<ForwardIcon />} />
-                </Grid> */}
+            <Grid container rowSpacing={"1.5rem"} paddingTop={"0.1rem"} paddingBottom={"1rem"}>
+                <Grid item sm={12} md={12} >
+                    <ArrowBtnLayout label={"REFRACTION (DILATED)"} />
+                </Grid>
 
                 <Grid item sm={12} md={12}>
                     <Grid container >
                         <Grid item sm={1.5} md={1.8} lg={1.5}>
                             
-                            <Box className="myBtn" marginBottom={"0.5rem"}>
-                                <ArrowBtn label={"Fill"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
+                            <Box  marginBottom={"0.5rem"}>
+                                <ArrowBtn label={"Fill"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"} />
                             </Box>
-                            <Box className="myBtn">
-                                <ArrowBtn label={"Copy"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"} endIcon={<ForwardIcon style={{ paddingLeft: "-1rem", fontSize: "1.1rem" }} />} />
+                            <Box >
+                                <ArrowBtn label={"Copy"} padding={"0.1rem 0.0rem"} width={"3.8rem"} mdFontSize={"0.75rem"} />
                             </Box>
                             
                         </Grid>

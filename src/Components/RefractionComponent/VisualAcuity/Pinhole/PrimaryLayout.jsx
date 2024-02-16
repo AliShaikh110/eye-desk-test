@@ -1,4 +1,6 @@
-import { Grid, Stack, Typography } from "@mui/material"
+import Grid from "@mui/material/Grid"
+import Stack from "@mui/material/Stack"
+import Typography from "@mui/material/Typography"
 import React from "react"
 import { UcvaFirstMaping } from "../Mapping"
 import ButtonComp from "../../HelpRefComp/HelpRefComp"
@@ -8,7 +10,7 @@ export function PinholeLayout() {
 
     return (
         <Grid container>
-            <Grid item sm={1.5} md={1.5}><Typography sx={{fontSize:{sm:"0.8rem",md:"0.78rem", lg:"0.84rem"}, fontWeight:"550"}}>Pinhole</Typography></Grid>
+            <Grid item sm={1.5} md={1.5}><Typography sx={{fontSize:{sm:"0.8rem",md:"0.77rem", lg:"0.77rem"}, fontWeight:600}}>Pinhole</Typography></Grid>
             <Grid item sm={9} md={9}>
 
                 <UcvaFirstMaping />
